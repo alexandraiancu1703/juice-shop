@@ -101,17 +101,6 @@ void describe('utils', () => {
       assert.ok(agent instanceof ProxyAgent)
       assert.equal(await agent.getProxyForUrl('https://example.com/avatar.png', undefined as never), 'http://proxy.example:8080')
     })
-<<<<<<< HEAD
-
-    void it('returns false and logs warning when download fails', async () => {
-      const downloaded = await utils.downloadToFile('https://example.com/fail.png', 'unused', async () => {
-        throw new Error('Download failure')
-      })
-
-      assert.equal(downloaded, false)
-    })
-=======
->>>>>>> main
   })
 
   void describe('matchesSystemIniFile', () => {

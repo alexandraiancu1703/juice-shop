@@ -5,90 +5,6 @@
 
 @use '../../styles/variables' as *;
 
-<<<<<<< HEAD
-:host {
-  display: block;
-}
-
-mat-card {
-  padding: $space-m;
-}
-
-:host(.page-card) {
-  min-width: 720px;
-  width: 50%;
-}
-
-@media (max-width: 720px) {
-  :host(.page-card) {
-    margin-left: $space-m;
-    margin-right: $space-m;
-    min-width: 0;
-    width: 100%;
-  }
-}
-
-:host(.page-card) mat-card {
-  padding: $space-l $space-xl;
-}
-
-.mat-mdc-header-row {
-  border-bottom: 1px solid var(--theme-background-light);
-}
-
-svg {
-  font-size: 12.5px;
-}
-
-.table-container {
-  overflow-x: auto;
-}
-
-.address-table {
-  border-bottom: 1px solid var(--theme-background-light);
-  border-top: 1px solid var(--theme-background-light);
-  min-width: 600px;
-  table-layout: fixed;
-  width: 100%;
-}
-
-.mat-column-Name,
-.mat-column-Address,
-.mat-column-Country {
-  padding-left: 0;
-  padding-right: $space-m;
-}
-
-.mat-column-Name {
-  padding-left: $space-m;
-  white-space: nowrap;
-  width: 20%;
-}
-
-.mat-column-Country {
-  white-space: nowrap;
-  width: 15%;
-}
-
-.mat-column-Address {
-  word-break: break-word;
-}
-
-.mat-column-Selection,
-.mat-column-Edit,
-.mat-column-Remove {
-  padding: 0;
-  text-align: center;
-  width: 40px;
-}
-
-.actions {
-  align-items: center;
-  display: flex;
-  gap: $space-m;
-  justify-content: space-between;
-  margin-top: $space-m;
-=======
 .btn-new-address {
   display: block;
   margin-left: 0;
@@ -114,7 +30,6 @@ mat-header-row {
 .heading-text {
   justify-content: center;
   padding: $space-s $space-ml;
->>>>>>> main
 }
 
 .div-boundary {
@@ -122,8 +37,6 @@ mat-header-row {
   border-radius: 5px;
   box-shadow: 0 0 0 !important;
 }
-<<<<<<< HEAD
-=======
 
 .mdc-card {
   border: 0;
@@ -168,4 +81,3 @@ svg {
 .add-new-address {
   margin-top: $space-ml;
 }
->>>>>>> main

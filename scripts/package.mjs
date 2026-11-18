@@ -5,19 +5,12 @@
 
 import { createRequire } from 'node:module'
 import fs from 'node:fs/promises'
-<<<<<<< HEAD
-import { createWriteStream, globSync, statSync } from 'node:fs'
-=======
 import { createWriteStream } from 'node:fs'
->>>>>>> main
 import path from 'node:path'
 import crypto from 'node:crypto'
 import { execSync } from 'node:child_process'
 import { parseArgs } from 'node:util'
-<<<<<<< HEAD
-=======
 import { glob } from 'glob'
->>>>>>> main
 
 // archiver must be globally installed — Node.js does not search npm's global node_modules by default
 // not great, but the alternative is to include archiver as a prod dependency as all the dev dependency are cleared by npm prune before packaging
@@ -71,11 +64,7 @@ const prefix = `juice-shop_${pkg.version}`
 
 await fs.mkdir('dist', { recursive: true })
 
-<<<<<<< HEAD
-const files = globSync([
-=======
 const files = await glob([
->>>>>>> main
   '.well-known/**',
   'LICENSE',
   '*.md',
@@ -89,10 +78,6 @@ const files = await glob([
   'config/*.yml',
   'data/*.ts',
   'data/static/**',
-<<<<<<< HEAD
-  'data/static/codefixes/.editorconfig',
-=======
->>>>>>> main
   'encryptionkeys/**',
   'frontend/dist/frontend/**',
   'frontend/dist/bom/**',
@@ -105,12 +90,7 @@ const files = await glob([
   'routes/*.ts',
   'uploads/complaints/.gitkeep',
   'views/**'
-<<<<<<< HEAD
-], { exclude: (file) => file.replaceAll('\\', '/').startsWith('build/reports') })
-  .filter((file) => statSync(file).isFile())
-=======
 ], { dot: true, ignore: ['build/reports/**'], nodir: true })
->>>>>>> main
 
 // Stream all matched files into the archive under the prefix directory
 await new Promise((resolve, reject) => {

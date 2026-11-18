@@ -6,13 +6,8 @@
 import { FeedbackService } from '../Services/feedback.service'
 import { CaptchaService } from '../Services/captcha.service'
 import { UserService } from '../Services/user.service'
-<<<<<<< HEAD
-import { UntypedFormControl, Validators, FormsModule, ReactiveFormsModule, NgForm } from '@angular/forms'
-import { Component, type OnInit, inject, ChangeDetectionStrategy, ViewChild } from '@angular/core'
-=======
 import { UntypedFormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { Component, type OnInit, inject, ChangeDetectionStrategy } from '@angular/core'
->>>>>>> main
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faPaperPlane, faStar } from '@fortawesome/free-solid-svg-icons'
 import { TranslateService, TranslateModule } from '@ngx-translate/core'
@@ -46,10 +41,6 @@ export class ContactComponent implements OnInit {
   public feedbackControl: UntypedFormControl = new UntypedFormControl('', [Validators.required, Validators.maxLength(160)])
   public captchaControl: UntypedFormControl = new UntypedFormControl('', [Validators.required, Validators.pattern('-?[\\d]*')])
   public userIdControl: UntypedFormControl = new UntypedFormControl('', [])
-<<<<<<< HEAD
-  @ViewChild('feedbackForm', { static: true }) public feedbackForm?: NgForm
-=======
->>>>>>> main
   public rating = 0
   public feedback: any = undefined
   public captcha: any
@@ -136,20 +127,12 @@ export class ContactComponent implements OnInit {
     this.captchaControl.markAsUntouched()
     this.captchaControl.markAsPristine()
     this.captchaControl.setValue('')
-<<<<<<< HEAD
-    this.feedbackForm?.resetForm()
-=======
->>>>>>> main
   }
 
   resetCaptcha () {
     this.captchaControl.markAsUntouched()
     this.captchaControl.markAsPristine()
     this.captchaControl.setValue('')
-<<<<<<< HEAD
-    this.feedbackForm?.resetForm()
-=======
->>>>>>> main
   }
 
   formatRating (value: number) {

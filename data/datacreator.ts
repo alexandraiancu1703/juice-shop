@@ -4,10 +4,6 @@
  */
 
 import { AddressModel } from '../models/address'
-<<<<<<< HEAD
-import { PasskeyModel } from '../models/passkey'
-=======
->>>>>>> main
 import { BasketModel } from '../models/basket'
 import { BasketItemModel } from '../models/basketitem'
 import { CardModel } from '../models/card'
@@ -31,11 +27,7 @@ import { getCodeChallenges } from '../lib/codingChallenges'
 import type { Memory as MemoryConfig, Product as ProductConfig } from '../lib/config.schema'
 import config from 'config'
 import * as utils from '../lib/utils'
-<<<<<<< HEAD
-import type { StaticUser, StaticUserAddress, StaticUserCard, StaticUserPasskey } from './staticData'
-=======
 import type { StaticUser, StaticUserAddress, StaticUserCard } from './staticData'
->>>>>>> main
 import { loadStaticChallengeData, loadStaticDeliveryData, loadStaticUserData, loadStaticSecurityQuestionsData } from './staticData'
 import type { CreationAttributes } from 'sequelize'
 import { ordersCollection, reviewsCollection } from './mongodb'
@@ -43,11 +35,8 @@ import { AllHtmlEntities as Entities } from 'html-entities'
 import * as datacache from './datacache'
 import * as security from '../lib/insecurity'
 import { variableDependencies, domainDependencies, preconditionResults } from '../lib/startup/validatePreconditions'
-<<<<<<< HEAD
-=======
 // @ts-expect-error FIXME due to non-existing type definitions for replace
 import replace from 'replace'
->>>>>>> main
 
 const entities = new Entities()
 
@@ -198,11 +187,7 @@ async function createUsers () {
   const users = await loadStaticUserData()
 
   await Promise.all(
-<<<<<<< HEAD
-    users.map(async ({ username, email, password, customDomain, key, role, deletedFlag, profileImage, securityQuestion, feedback, address, card, totpSecret, passkeys, lastLoginIp = '' }) => {
-=======
     users.map(async ({ username, email, password, customDomain, key, role, deletedFlag, profileImage, securityQuestion, feedback, address, card, totpSecret, lastLoginIp = '' }) => {
->>>>>>> main
       try {
         const completeEmail = customDomain ? email : `${email}@${config.get<string>('application.domain')}`
         const user = await UserModel.create({
@@ -221,10 +206,6 @@ async function createUsers () {
         if (deletedFlag) await deleteUser(user.id)
         if (address != null) await createAddresses(user.id, address)
         if (card != null) await createCards(user.id, card)
-<<<<<<< HEAD
-        if (passkeys != null) await createPasskeys(user.id, passkeys)
-=======
->>>>>>> main
       } catch (err) {
         logger.error(`Could not insert User ${key}: ${utils.getErrorMessage(err)}`)
       }
@@ -299,24 +280,6 @@ async function createCards (UserId: number, cards: StaticUserCard[]) {
   }))
 }
 
-<<<<<<< HEAD
-async function createPasskeys (UserId: number, passkeys: StaticUserPasskey[]) {
-  return await Promise.all(passkeys.map(async (passkey) => {
-    return await PasskeyModel.create({
-      UserId,
-      credentialID: passkey.credentialID,
-      publicKey: passkey.publicKey,
-      counter: passkey.counter ?? 0,
-      transports: passkey.transports ?? '',
-      aaguid: passkey.aaguid
-    }).catch((err: unknown) => {
-      logger.error(`Could not create passkey: ${utils.getErrorMessage(err)}`)
-    })
-  }))
-}
-
-=======
->>>>>>> main
 async function deleteUser (userId: number) {
   return await UserModel.destroy({ where: { id: userId } }).catch((err: unknown) => {
     logger.error(`Could not perform soft delete for the user ${userId}: ${utils.getErrorMessage(err)}`)
@@ -831,9 +794,6 @@ async function createOrders () {
 }
 
 async function prepareFilesystem () {
-<<<<<<< HEAD
-  utils.replaceInFile('.well-known/csaf/provider-metadata.json', 'http://localhost:3000', config.get<string>('server.baseUrl'))
-=======
   replace({
     regex: 'http://localhost:3000',
     replacement: config.get<string>('server.baseUrl'),
@@ -841,5 +801,4 @@ async function prepareFilesystem () {
     recursive: true,
     silent: true
   })
->>>>>>> main
 }

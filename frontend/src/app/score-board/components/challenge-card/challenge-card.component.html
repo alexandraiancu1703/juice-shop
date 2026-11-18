@@ -10,18 +10,6 @@
 <div class="bottom-row">
   <div class="tags">
     @for (tag of challenge().tagList; track tag) {
-<<<<<<< HEAD
-      @if (tag !== 'Tutorial' && tag !== 'With Coding Challenge') {
-        @if (tag?.startsWith('Requires ')) {
-          @if (isDependencyMissing(tag)) {
-            <a class="tag tag-missing-dependency" [href]="getDependencyDocumentation(tag)" target="_blank" [matTooltip]="('TAG_EXTERNAL_DEPENDENCY_DESCRIPTION' | translate) + '\n\n' + ('TAG_EXTERNAL_DEPENDENCY_MISSING' | translate:{ dependency: getDependency(tag)?.key })" matTooltipClass="multiline-tooltip"><mat-icon class="dependency-icon">extension_off</mat-icon>{{ 'TAG_EXTERNAL_DEPENDENCY' | translate:{ dependency: tag?.substring('Requires '.length) } }}</a>
-          } @else {
-            <span class="tag tag-available-dependency" [matTooltip]="('TAG_EXTERNAL_DEPENDENCY_DESCRIPTION' | translate) + '\n\n' + ('TAG_EXTERNAL_DEPENDENCY_PRESENT' | translate:{ dependency: getDependency(tag)?.key })" matTooltipClass="multiline-tooltip"><mat-icon class="dependency-icon">extension</mat-icon>{{ 'TAG_EXTERNAL_DEPENDENCY' | translate:{ dependency: tag?.substring('Requires '.length) } }}</span>
-          }
-        } @else {
-          <span class="tag" [matTooltip]="'TAG_' + tag?.toUpperCase().split(' ').join('_') + '_DESCRIPTION' | translate">{{ ('TAG_' + tag?.toUpperCase().split(' ').join('_')) | translate }}</span>
-        }
-=======
       @if (tag?.startsWith('Requires ')) {
         @if (isDependencyMissing(tag)) {
           <a class="tag tag-missing-dependency" [href]="getDependencyDocumentation(tag)" target="_blank" [matTooltip]="('TAG_EXTERNAL_DEPENDENCY_DESCRIPTION' | translate) + '\n\n' + ('TAG_EXTERNAL_DEPENDENCY_MISSING' | translate:{ dependency: getDependency(tag)?.key })" matTooltipClass="multiline-tooltip"><mat-icon class="dependency-icon">extension_off</mat-icon>{{ 'TAG_EXTERNAL_DEPENDENCY' | translate:{ dependency: tag?.substring('Requires '.length) } }}</a>
@@ -30,7 +18,6 @@
         }
       } @else {
         <span class="tag" [matTooltip]="'TAG_' + tag?.toUpperCase().split(' ').join('_') + '_DESCRIPTION' | translate">{{ ('TAG_' + tag?.toUpperCase().split(' ').join('_')) | translate }}</span>
->>>>>>> main
       }
     }
   </div>
@@ -54,12 +41,7 @@
       [disabled]="challenge().solved === false && applicationConfiguration().challenges.codingChallengesEnabled !== 'always'"
       [ngClass]="{
         'partially-completed': challenge().codingChallengeStatus === 1,
-<<<<<<< HEAD
-        'completed': challenge().codingChallengeStatus === 2,
-        'highlight-button': highlightCodingChallenge()
-=======
         'completed': challenge().codingChallengeStatus === 2
->>>>>>> main
       }" [matTooltip]="(challenge().solved ? 'LAUNCH_CODING_CHALLENGE' : 'SOLVE_HACKING_CHALLENGE') | translate">
       @if (challenge().codingChallengeStatus !== 0) {
       <span class="badge-status">{{ challenge().codingChallengeStatus }}/2</span>
@@ -84,11 +66,7 @@
     }
     <!-- hacking instructor-->
     @if (applicationConfiguration().hackingInstructor.isEnabled && hasInstructions(challenge().name)) {
-<<<<<<< HEAD
-    <button class="badge not-completable" [ngClass]="{ 'highlight-button': highlightTutorial() }" [matTooltip]="'INFO_HACKING_INSTRUCTOR' | translate"
-=======
     <button class="badge not-completable" [matTooltip]="'INFO_HACKING_INSTRUCTOR' | translate"
->>>>>>> main
       (click)="startHackingInstructorFor(challenge().name)">
       <mat-icon>school_outline</mat-icon>
     </button>

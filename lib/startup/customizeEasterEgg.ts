@@ -5,11 +5,8 @@
 
 import config from 'config'
 import * as utils from '../utils'
-<<<<<<< HEAD
-=======
 // @ts-expect-error FIXME due to non-existing type definitions for replace
 import replace from 'replace'
->>>>>>> main
 
 const customizeEasterEgg = async () => {
   if (config.has('application.easterEggPlanet.overlayMap')) {
@@ -28,9 +25,6 @@ const customizeEasterEgg = async () => {
 
 const replaceImagePath = (overlay: string) => {
   const textureDeclaration = 'orangeTexture = THREE.ImageUtils.loadTexture("/assets/private/' + overlay + '");'
-<<<<<<< HEAD
-  utils.replaceInFile('frontend/dist/frontend/assets/private/threejs-demo.html', /orangeTexture = .*;/, textureDeclaration)
-=======
   replace({
     regex: /orangeTexture = .*;/,
     replacement: textureDeclaration,
@@ -38,14 +32,10 @@ const replaceImagePath = (overlay: string) => {
     recursive: false,
     silent: true
   })
->>>>>>> main
 }
 
 const replaceThreeJsTitleTag = () => {
   const threeJsTitleTag = '<title>Welcome to Planet ' + config.get<string>('application.easterEggPlanet.name') + '</title>'
-<<<<<<< HEAD
-  utils.replaceInFile('frontend/dist/frontend/assets/private/threejs-demo.html', /<title>.*<\/title>/, threeJsTitleTag)
-=======
   replace({
     regex: /<title>.*<\/title>/,
     replacement: threeJsTitleTag,
@@ -53,7 +43,6 @@ const replaceThreeJsTitleTag = () => {
     recursive: false,
     silent: true
   })
->>>>>>> main
 }
 
 export default customizeEasterEgg

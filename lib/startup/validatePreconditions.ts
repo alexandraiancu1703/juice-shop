@@ -7,19 +7,11 @@ import pjson from '../../package.json'
 import config from 'config'
 import logger from '../logger'
 import path from 'node:path'
-<<<<<<< HEAD
-import colors from '../colors'
-import { access, readdir } from 'node:fs/promises'
-import process from 'node:process'
-import semver from 'semver'
-import net from 'node:net'
-=======
 import colors from 'colors/safe'
 import { access, readdir } from 'node:fs/promises'
 import process from 'node:process'
 import semver from 'semver'
 import portscanner from 'portscanner'
->>>>>>> main
 import validateDependencies from './validateDependencies'
 
 export interface Dependency {
@@ -184,26 +176,6 @@ export const checkIfDomainReachable = async (domain: string) => {
 
 export const checkIfPortIsAvailable = async (port: number | string) => {
   const portNumber = parseInt(port.toString())
-<<<<<<< HEAD
-  const isOpen = await new Promise<boolean>((resolve) => {
-    const socket = new net.Socket()
-    const done = (open: boolean) => {
-      socket.destroy()
-      resolve(open)
-    }
-    socket.setTimeout(400)
-    socket.once('connect', () => { done(true) })
-    socket.once('timeout', () => { done(false) })
-    socket.once('error', () => { done(false) })
-    socket.connect(portNumber, '127.0.0.1')
-  })
-  if (isOpen) {
-    logger.warn(`Port ${colors.bold(port.toString())} is in use (${colors.red('ERROR')})`)
-    return false
-  }
-  logger.info(`Port ${colors.bold(port.toString())} is available (${colors.green('SUCCESS')})`)
-  return true
-=======
   return await new Promise((resolve, reject) => {
     portscanner.checkPortStatus(portNumber, function (error: unknown, status: string) {
       if (error) {
@@ -219,7 +191,6 @@ export const checkIfPortIsAvailable = async (port: number | string) => {
       }
     })
   })
->>>>>>> main
 }
 
 export const checkIfRequiredFileExists = async (pathRelativeToProjectRoot: string) => {
@@ -262,18 +233,7 @@ export const isOllamaUrl = (url: string): boolean => {
 export const checkIfLlmModelAvailable = async (llmApiUrl: string) => {
   const model = config.get<string>('application.chatBot.model')
   try {
-<<<<<<< HEAD
-    const headers: Record<string, string> = {}
-    if (process.env.LLM_API_KEY) {
-      headers.Authorization = `Bearer ${process.env.LLM_API_KEY}`
-    }
-    const response = await fetch(`${llmApiUrl}/models`, {
-      headers,
-      signal: AbortSignal.timeout(5000)
-    })
-=======
     const response = await fetch(`${llmApiUrl}/models`, { signal: AbortSignal.timeout(5000) })
->>>>>>> main
     if (!response.ok) return false
     const body = await response.json() as { data?: Array<{ id: string }> }
     const availableModels: string[] = (body.data ?? []).map((m: { id: string }) => m.id)

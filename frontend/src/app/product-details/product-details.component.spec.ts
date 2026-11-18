@@ -22,12 +22,8 @@ import { MatIconModule } from '@angular/material/icon'
 import { MatExpansionModule } from '@angular/material/expansion'
 
 import { ProductDetailsComponent } from './product-details.component'
-<<<<<<< HEAD
-import { of, Subject, throwError } from 'rxjs'
-=======
 import { of, throwError } from 'rxjs'
 import { ReactiveFormsModule } from '@angular/forms'
->>>>>>> main
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 import { type Product } from '../Models/product.model'
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
@@ -47,19 +43,10 @@ describe('ProductDetailsComponent', () => {
         userService.whoAmI.mockReturnValue(of({}))
         productReviewService = {
             get: vi.fn().mockName("ProductReviewService.get"),
-<<<<<<< HEAD
-            create: vi.fn().mockName("ProductReviewService.create"),
-            like: vi.fn().mockName("ProductReviewService.like")
-        }
-        productReviewService.get.mockReturnValue(of([]))
-        productReviewService.create.mockReturnValue(of({}))
-        productReviewService.like.mockReturnValue(of({}))
-=======
             create: vi.fn().mockName("ProductReviewService.create")
         }
         productReviewService.get.mockReturnValue(of([]))
         productReviewService.create.mockReturnValue(of({}))
->>>>>>> main
         dialog = {
             open: vi.fn().mockName("Dialog.open")
         }
@@ -70,10 +57,7 @@ describe('ProductDetailsComponent', () => {
 
         TestBed.configureTestingModule({
             imports: [TranslateModule.forRoot(),
-<<<<<<< HEAD
-=======
                 ReactiveFormsModule,
->>>>>>> main
                 MatDialogModule,
                 MatFormFieldModule,
                 MatInputModule,
@@ -101,24 +85,13 @@ describe('ProductDetailsComponent', () => {
     beforeEach(() => {
         fixture = TestBed.createComponent(ProductDetailsComponent)
         component = fixture.componentInstance
-<<<<<<< HEAD
-=======
         fixture.autoDetectChanges()
->>>>>>> main
     })
 
     it('should create', () => {
         expect(component).toBeTruthy()
     })
 
-<<<<<<< HEAD
-    it('should post anonymous review if no user email is returned', async () => {
-        component.data = { productData: { id: 42 } as Product }
-        userService.whoAmI.mockReturnValue(of({}))
-        fixture.detectChanges()
-        component.reviewModel.update((model) => ({ ...model, message: 'Great product!' }))
-        await component.addReview()
-=======
     it('should post anonymous review if no user email is returned', () => {
         component.data = { productData: { id: 42 } as Product }
         userService.whoAmI.mockReturnValue(of({}))
@@ -127,21 +100,12 @@ describe('ProductDetailsComponent', () => {
         textArea.value = 'Great product!'
         const buttonDe = fixture.debugElement.query(By.css('#submitButton'))
         buttonDe.triggerEventHandler('click', null)
->>>>>>> main
         const reviewObject = { message: 'Great product!', author: 'Anonymous' }
         expect(vi.mocked(productReviewService.create).mock.calls.length).toBe(1)
         expect(vi.mocked(productReviewService.create).mock.calls[0][0]).toBe(42)
         expect(vi.mocked(productReviewService.create).mock.calls[0][1]).toEqual(reviewObject)
     })
 
-<<<<<<< HEAD
-    it('should post review with user email as author', async () => {
-        component.data = { productData: { id: 42 } as Product }
-        userService.whoAmI.mockReturnValue(of({ email: 'horst@juice-sh.op' }))
-        fixture.detectChanges()
-        component.reviewModel.update((model) => ({ ...model, message: 'Great product!' }))
-        await component.addReview()
-=======
     it('should post review with user email as author', () => {
         component.data = { productData: { id: 42 } as Product }
         userService.whoAmI.mockReturnValue(of({ email: 'horst@juice-sh.op' }))
@@ -150,143 +114,12 @@ describe('ProductDetailsComponent', () => {
         textArea.value = 'Great product!'
         const buttonDe = fixture.debugElement.query(By.css('#submitButton'))
         buttonDe.triggerEventHandler('click', null)
->>>>>>> main
         const reviewObject = { message: 'Great product!', author: 'horst@juice-sh.op' }
         expect(vi.mocked(productReviewService.create).mock.calls.length).toBe(1)
         expect(vi.mocked(productReviewService.create).mock.calls[0][0]).toBe(42)
         expect(vi.mocked(productReviewService.create).mock.calls[0][1]).toEqual(reviewObject)
     })
 
-<<<<<<< HEAD
-    it('should treat a whitespace-only review as invalid', () => {
-        fixture.detectChanges()
-        component.reviewModel.set({ message: '   ' })
-        expect(component.reviewForm.message().valid()).toBe(false)
-    })
-
-    it('should log errors when retrieving user directly to browser console', () => {
-        component.data = { productData: { id: 42 } as Product }
-        userService.whoAmI.mockReturnValue(throwError(() => 'Error'))
-        const log = vi.spyOn(console, 'log').mockImplementation(() => {})
-        fixture.detectChanges()
-        expect(log).toHaveBeenCalledWith('Error')
-        log.mockRestore()
-    })
-
-    it('should log errors when posting review directly to browser console', async () => {
-        component.data = { productData: { id: 42 } as Product }
-        userService.whoAmI.mockReturnValue(of({}))
-        productReviewService.create.mockReturnValue(throwError(() => 'Error'))
-        const log = vi.spyOn(console, 'log').mockImplementation(() => {})
-        fixture.detectChanges()
-        component.reviewModel.update((model) => ({ ...model, message: 'Great product!' }))
-        await component.addReview()
-        expect(log).toHaveBeenCalledWith('Error')
-        expect(component.reviewModel().message).toBe('Great product!')
-        log.mockRestore()
-        fixture.destroy()
-    })
-
-    it('should refresh reviews after posting a review', async () => {
-        component.data = { productData: { id: 42 } as Product }
-        productReviewService.create.mockReturnValue(of({}))
-        productReviewService.get.mockReturnValue(of([{ _id: '42', message: 'Review 1', author: 'Anonymous' }]))
-        userService.whoAmI.mockReturnValue(of({}))
-        fixture.detectChanges()
-        component.reviewModel.update((model) => ({ ...model, message: 'Great product!' }))
-        await component.addReview()
-        expect(productReviewService.create).toHaveBeenCalled()
-        expect(productReviewService.get).toHaveBeenCalled()
-        expect(component.reviewModel().message).toBe('')
-    })
-
-    it('should mark the liked review and refetch the list to sync the like count', () => {
-        component.data = { productData: { id: 42 } as Product }
-        userService.whoAmI.mockReturnValue(of({ email: 'horst@juice-sh.op' }))
-        productReviewService.get.mockReturnValue(of([
-            { _id: '1', message: 'Great product!', author: 'jim@juice-sh.op', liked: false, likesCount: 2 }
-        ]))
-        fixture.detectChanges()
-
-        productReviewService.get.mockReturnValue(of([
-            { _id: '1', message: 'Great product!', author: 'jim@juice-sh.op', liked: true, likesCount: 5 }
-        ]))
-        component.likeReview(component.reviews()[0])
-
-        expect(productReviewService.like).toHaveBeenCalledWith('1')
-        expect(component.likedReviewId()).toBe('1')
-        expect(productReviewService.get).toHaveBeenCalledTimes(2)
-        expect(component.reviews()[0].liked).toBe(true)
-        expect(component.reviews()[0].likesCount).toBe(5)
-    })
-
-    it('should refetch the list when liking a review fails', () => {
-        const log = vi.spyOn(console, 'log').mockImplementation(() => {})
-        productReviewService.like.mockReturnValue(throwError(() => 'Error'))
-        component.data = { productData: { id: 42 } as Product }
-        userService.whoAmI.mockReturnValue(of({ email: 'horst@juice-sh.op' }))
-        productReviewService.get.mockReturnValue(of([
-            { _id: '1', message: 'Great product!', author: 'jim@juice-sh.op', liked: false, likesCount: 2 }
-        ]))
-        fixture.detectChanges()
-
-        productReviewService.get.mockReturnValue(of([
-            { _id: '1', message: 'Great product!', author: 'jim@juice-sh.op', liked: true, likesCount: 3 }
-        ]))
-        component.likeReview(component.reviews()[0])
-
-        expect(log).toHaveBeenCalledWith('Error')
-        expect(productReviewService.get).toHaveBeenCalledTimes(2)
-        expect(component.reviews()[0].liked).toBe(true)
-        expect(component.pendingLikeIds()).toEqual([])
-        log.mockRestore()
-    })
-
-    it('should keep reloading reviews after a failed reload', () => {
-        const log = vi.spyOn(console, 'log').mockImplementation(() => {})
-        component.data = { productData: { id: 42 } as Product }
-        productReviewService.get.mockReturnValue(throwError(() => 'Error'))
-        fixture.detectChanges()
-        expect(log).toHaveBeenCalledWith('Error')
-
-        productReviewService.get.mockReturnValue(of([{ _id: '1', message: 'Review', author: 'Anonymous' }]))
-        component.editReview({ _id: '1', message: 'Review', author: 'Anonymous' })
-        expect(component.reviews().length).toBe(1)
-        log.mockRestore()
-    })
-
-    it('should fall back to Anonymous as author when the email is empty', () => {
-        userService.whoAmI.mockReturnValue(of({ email: '' }))
-        fixture.detectChanges()
-        expect(component.author()).toBe('Anonymous')
-    })
-
-    it('should ignore repeated like clicks while the request is pending', () => {
-        const likeSubject = new Subject<void>()
-        productReviewService.like.mockReturnValue(likeSubject.asObservable())
-        component.data = { productData: { id: 42 } as Product }
-        userService.whoAmI.mockReturnValue(of({ email: 'horst@juice-sh.op' }))
-        productReviewService.get.mockReturnValue(of([
-            { _id: '1', message: 'Great product!', author: 'jim@juice-sh.op', liked: false, likesCount: 2 }
-        ]))
-        fixture.detectChanges()
-
-        component.likeReview(component.reviews()[0])
-        component.likeReview(component.reviews()[0])
-        component.likeReview(component.reviews()[0])
-
-        expect(productReviewService.like).toHaveBeenCalledTimes(1)
-        expect(component.pendingLikeIds()).toEqual(['1'])
-
-        productReviewService.get.mockReturnValue(of([
-            { _id: '1', message: 'Great product!', author: 'jim@juice-sh.op', liked: true, likesCount: 3 }
-        ]))
-        likeSubject.next()
-        likeSubject.complete()
-
-        expect(component.reviews()[0].liked).toBe(true)
-        expect(component.pendingLikeIds()).toEqual([])
-=======
     it('should log errors when retrieving user directly to browser console', () => {
         component.data = { productData: { id: 42 } as Product }
         userService.whoAmI.mockReturnValue(throwError('Error'))
@@ -321,22 +154,11 @@ describe('ProductDetailsComponent', () => {
         buttonDe.triggerEventHandler('click', null)
         expect(productReviewService.create).toHaveBeenCalled()
         expect(productReviewService.get).toHaveBeenCalled()
->>>>>>> main
     })
 
     it('should open a modal dialog with review editor', () => {
         component.data = { productData: { id: 42 } as Product }
         userService.whoAmI.mockReturnValue(of({ email: 'horst@juice-sh.op' }))
-<<<<<<< HEAD
-        vi.spyOn(component, 'isLoggedIn').mockReturnValue('token')
-        productReviewService.get.mockReturnValue(of([{ _id: '42', message: 'Great product!', author: 'horst@juice-sh.op' }]))
-        fixture.detectChanges()
-        const buttonDe = fixture.debugElement.query(By.css('button.edit-review-button'))
-        buttonDe.triggerEventHandler('click', null)
-        expect(vi.mocked(dialog.open).mock.calls.length).toBe(1)
-        expect(vi.mocked(dialog.open).mock.calls[0][0]).toBe(ProductReviewEditComponent)
-        expect(vi.mocked(dialog.open).mock.calls[0][1].data).toEqual({ reviewData: { _id: '42', message: 'Great product!', author: 'horst@juice-sh.op' } })
-=======
         productReviewService.get.mockReturnValue(of([{ id: '42', message: 'Great product!', author: 'horst@juice-sh.op' }]))
         component.ngOnInit()
         fixture.detectChanges()
@@ -345,23 +167,15 @@ describe('ProductDetailsComponent', () => {
         expect(vi.mocked(dialog.open).mock.calls.length).toBe(1)
         expect(vi.mocked(dialog.open).mock.calls[0][0]).toBe(ProductReviewEditComponent)
         expect(vi.mocked(dialog.open).mock.calls[0][1].data).toEqual({ reviewData: { id: '42', message: 'Great product!', author: 'horst@juice-sh.op' } })
->>>>>>> main
     })
 
     it('should refresh reviews of product after editing a review', () => {
         component.data = { productData: { id: 42 } as Product }
         userService.whoAmI.mockReturnValue(of({ email: 'horst@juice-sh.op' }))
-<<<<<<< HEAD
-        vi.spyOn(component, 'isLoggedIn').mockReturnValue('token')
-        productReviewService.get.mockReturnValue(of([{ _id: '42', message: 'Great product!', author: 'horst@juice-sh.op' }]))
-        fixture.detectChanges()
-        const buttonDe = fixture.debugElement.query(By.css('button.edit-review-button'))
-=======
         productReviewService.get.mockReturnValue(of([{ id: '42', message: 'Great product!', author: 'horst@juice-sh.op' }]))
         component.ngOnInit()
         fixture.detectChanges()
         const buttonDe = fixture.debugElement.query(By.css('div.review-text'))
->>>>>>> main
         buttonDe.triggerEventHandler('click', null)
         expect(productReviewService.get).toHaveBeenCalledWith(42)
     })
@@ -386,20 +200,12 @@ describe('ProductDetailsComponent', () => {
         })
 
         it('should render the close dialog button and the review textarea', () => {
-<<<<<<< HEAD
-            fixture.detectChanges()
-=======
->>>>>>> main
             const compiled: HTMLElement = fixture.nativeElement
             expect(compiled.querySelector('button.close-dialog')).toBeTruthy()
             expect(compiled.querySelector('textarea')).toBeTruthy()
         })
 
         it('should keep the submit review button disabled while the textarea is empty', () => {
-<<<<<<< HEAD
-            fixture.detectChanges()
-=======
->>>>>>> main
             const button = (fixture.nativeElement as HTMLElement).querySelector('button#submitButton') as HTMLButtonElement
             expect(button.disabled).toBe(true)
         })
@@ -407,62 +213,9 @@ describe('ProductDetailsComponent', () => {
         it('should render the empty review placeholder when there are no reviews', () => {
             component.data = { productData: { id: 42 } as Product }
             productReviewService.get.mockReturnValue(of([]))
-<<<<<<< HEAD
-            fixture.detectChanges()
-            expect((fixture.nativeElement as HTMLElement).querySelector('.noResultText')).toBeTruthy()
-        })
-
-        it('should only show the edit button on reviews authored by the current user', () => {
-            component.data = { productData: { id: 42 } as Product }
-            userService.whoAmI.mockReturnValue(of({ email: 'horst@juice-sh.op' }))
-            vi.spyOn(component, 'isLoggedIn').mockReturnValue('token')
-            productReviewService.get.mockReturnValue(of([
-                { _id: '1', message: 'Mine', author: 'horst@juice-sh.op', liked: false, likesCount: 0 },
-                { _id: '2', message: 'Someone else', author: 'jim@juice-sh.op', liked: false, likesCount: 0 },
-                { _id: '3', message: 'Anonymous review', author: 'Anonymous', liked: false, likesCount: 0 }
-            ]))
-            fixture.detectChanges()
-            const editButtons = (fixture.nativeElement as HTMLElement).querySelectorAll('button.edit-review-button')
-            expect(editButtons.length).toBe(1)
-        })
-
-        it('should not show the edit button on Anonymous reviews while the current user is unknown', () => {
-            component.data = { productData: { id: 42 } as Product }
-            userService.whoAmI.mockReturnValue(of({}))
-            vi.spyOn(component, 'isLoggedIn').mockReturnValue('token')
-            productReviewService.get.mockReturnValue(of([
-                { _id: '1', message: 'Anonymous review', author: 'Anonymous', liked: false, likesCount: 0 }
-            ]))
-            fixture.detectChanges()
-            expect((fixture.nativeElement as HTMLElement).querySelectorAll('button.edit-review-button').length).toBe(0)
-        })
-
-        it('should show an error when the review exceeds the maximum length', () => {
-            fixture.detectChanges()
-            component.reviewForm.message().value.set('x'.repeat(161))
-            component.reviewForm.message().markAsTouched()
-            fixture.detectChanges()
-            expect((fixture.nativeElement as HTMLElement).querySelector('mat-error')).toBeTruthy()
-        })
-
-        it('should disable the like button for reviews that are already liked', () => {
-            vi.spyOn(component, 'isLoggedIn').mockReturnValue('token')
-            component.data = { productData: { id: 42 } as Product }
-            userService.whoAmI.mockReturnValue(of({ email: 'horst@juice-sh.op' }))
-            productReviewService.get.mockReturnValue(of([
-                { _id: '1', message: 'Liked', author: 'jim@juice-sh.op', liked: true, likesCount: 3 },
-                { _id: '2', message: 'Not liked', author: 'jim@juice-sh.op', liked: false, likesCount: 0 }
-            ]))
-            fixture.detectChanges()
-            const likeButtons = (fixture.nativeElement as HTMLElement).querySelectorAll('button.rw-button')
-            expect((likeButtons[0] as HTMLButtonElement).disabled).toBe(true)
-            expect((likeButtons[1] as HTMLButtonElement).disabled).toBe(false)
-        })
-=======
             component.ngOnInit()
             fixture.detectChanges()
             expect((fixture.nativeElement as HTMLElement).querySelector('.noResultText')).toBeTruthy()
         })
->>>>>>> main
     })
 })

@@ -7,12 +7,8 @@
 // otherwise this check would be useless as the app would fail on a random import before even reaching this point
 const validateIfDependencyCheckerIsInstalled = async () => {
   try {
-<<<<<<< HEAD
-    await import('semver')
-=======
     // @ts-expect-error FIXME due to non-existing type definitions for check-dependencies
     await import('check-dependencies')
->>>>>>> main
   } catch (err) {
     console.error('Please run "npm install" before starting the application!')
     process.exit(1)

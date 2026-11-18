@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import colors from '../lib/colors'
-=======
 import colors from 'colors/safe'
->>>>>>> main
 import type { ChallengeDiff } from './rsnUtil'
 
 function printSuccess () {

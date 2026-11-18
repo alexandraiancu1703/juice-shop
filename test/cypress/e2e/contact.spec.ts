@@ -14,10 +14,6 @@ describe('/#/contact', () => {
     })
 
     it('should be possible to provide feedback as another user', () => {
-<<<<<<< HEAD
-      cy.get('#userId').should('have.value', '1')
-=======
->>>>>>> main
       cy.get('#userId').then(function ($element) {
         $element[0].removeAttribute('hidden')
         $element[0].removeAttribute('class')
@@ -30,14 +26,6 @@ describe('/#/contact', () => {
 
       cy.visit('/#/administration')
 
-<<<<<<< HEAD
-      cy.get('.customer-table').should('contain.text', 'Picard stinks!')
-      cy.get('.customer-table mat-row')
-        .contains('Picard stinks!')
-        .parents('mat-row')
-        .find('.cdk-column-user')
-        .should('contain.text', '2')
-=======
       cy.get(
         '.customer-table > .mat-mdc-table > :nth-child(8) > .cdk-column-user'
       ).then(($val) => {
@@ -49,7 +37,6 @@ describe('/#/contact', () => {
           expect($val.text()).contain('2')
         }
       })
->>>>>>> main
 
       cy.expectChallengeSolved({ challenge: 'Forged Feedback' })
     })

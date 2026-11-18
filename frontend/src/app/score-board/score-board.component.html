@@ -26,10 +26,6 @@
   <challenge-card [challenge]="challenge" [applicationConfiguration]="applicationConfiguration"
     [repeatChallengeNotification]="repeatChallengeNotification.bind(this)" [unlockHint]="unlockHint.bind(this)"
     [lastUnlockedChallengeKey]="lastUnlockedChallengeKey" [challengeId]="'challenge-' + challenge.key"
-<<<<<<< HEAD
-    [highlightTutorial]="highlightTutorial" [highlightCodingChallenge]="highlightCodingChallenge"
-=======
->>>>>>> main
     [ngClass]="{ solved: challenge.solved, unsolved: !challenge.solved, disabled: challenge.disabledEnv !== null }" />
   }
 </div>

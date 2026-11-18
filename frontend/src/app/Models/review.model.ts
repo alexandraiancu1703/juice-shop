@@ -7,10 +7,4 @@ export interface Review {
   _id: string
   message: string
   author: string
-<<<<<<< HEAD
-  likesCount?: number
-  liked?: boolean
-  likedBy?: string[]
-=======
->>>>>>> main
 }

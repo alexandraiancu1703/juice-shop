@@ -170,25 +170,6 @@ void describe('/rest/chat', { timeout: 120000 }, () => {
     assert.equal(parsedBody.messages[1].content, 'What is your name?')
   })
 
-<<<<<<< HEAD
-  void it('POST requests token usage in the streamed LLM response', { timeout: 15000 }, async () => {
-    let parsedBody: any
-    onLlmRequest = (_req, body, res) => {
-      parsedBody = JSON.parse(body)
-      sendSSE(res, [contentChunk('Hi'), finishChunk()])
-    }
-
-    const res = await request(app)
-      .post('/rest/chat')
-      .set({ 'content-type': 'application/json' })
-      .send({ messages: [{ role: 'user', content: 'Hello' }] })
-
-    assert.equal(res.status, 200)
-    assert.deepEqual(parsedBody.stream_options, { include_usage: true })
-  })
-
-=======
->>>>>>> main
   void it('POST sends searchProducts tool definition to LLM', { timeout: 15000 }, async () => {
     let parsedBody: any
     onLlmRequest = (_req, body, res) => {

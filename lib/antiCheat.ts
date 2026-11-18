@@ -4,11 +4,7 @@
  */
 
 import config from 'config'
-<<<<<<< HEAD
-import colors from './colors'
-=======
 import colors from 'colors/safe'
->>>>>>> main
 import path from 'path'
 import fs from 'fs'
 import { retrieveCodeSnippet } from '../routes/vulnCodeSnippet'
@@ -18,11 +14,8 @@ import { getCodeChallenges } from './codingChallenges'
 import logger from './logger'
 import { type NextFunction, type Request, type Response } from 'express'
 import * as utils from './utils'
-<<<<<<< HEAD
-=======
 // @ts-expect-error FIXME due to non-existing type definitions for median
 import median from 'median'
->>>>>>> main
 import { type ChallengeKey } from '@juice-shop/models/challenge'
 
 const tightlyCoupledChallenges = {
@@ -157,15 +150,6 @@ export const calculateFixItCheatScore = async (challenge: Challenge) => {
   return cheatScore
 }
 
-<<<<<<< HEAD
-const median = (values: number[]) => {
-  const sorted = [...values].sort((a, b) => a - b)
-  const middle = Math.floor(sorted.length / 2)
-  return sorted.length % 2 === 0 ? (sorted[middle - 1] + sorted[middle]) / 2 : sorted[middle]
-}
-
-=======
->>>>>>> main
 export const totalCheatScore = () => {
   return solves.length > 1 ? median(solves.map(({ cheatScore }) => cheatScore)) : 0
 }

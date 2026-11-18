@@ -251,17 +251,6 @@ describe('ChallengeCard', () => {
             expect(tag?.classList.contains('tag-available-dependency')).toBe(false)
         })
 
-<<<<<<< HEAD
-        it('should not render Tutorial or With Coding Challenge tags', () => {
-            fixture.componentRef.setInput('challenge', { ...defaultChallenge, tagList: ['Tutorial', 'With Coding Challenge', 'Easy'] })
-            fixture.detectChanges()
-            const tags = (fixture.nativeElement as HTMLElement).querySelectorAll('.tags .tag')
-            expect(tags.length).toBe(1)
-            expect(tags[0]?.textContent).toContain('TAG_EASY')
-        })
-
-=======
->>>>>>> main
         it('should render a missing-dependency tag when dependency is missing', () => {
             fixture.componentRef.setInput('challenge', {
                 ...defaultChallenge,
@@ -357,41 +346,6 @@ describe('ChallengeCard', () => {
             expect(school).toBeTruthy()
         })
 
-<<<<<<< HEAD
-        it('should apply highlight-button class to hacking-instructor badge when highlightTutorial is true', () => {
-            component.hasInstructions = () => true
-            fixture.componentRef.setInput('challenge', { ...defaultChallenge, name: 'X' })
-            fixture.componentRef.setInput('highlightTutorial', true)
-            fixture.detectChanges()
-            const instructorBadge = Array.from((fixture.nativeElement as HTMLElement).querySelectorAll('.badge-group button.badge'))
-                .find((el) => el.querySelector('mat-icon')?.textContent?.includes('school_outline'))
-            expect(instructorBadge?.classList.contains('highlight-button')).toBe(true)
-
-            fixture.componentRef.setInput('highlightTutorial', false)
-            fixture.detectChanges()
-            expect(instructorBadge?.classList.contains('highlight-button')).toBe(false)
-        })
-
-        it('should apply highlight-button class to coding-challenge badge when highlightCodingChallenge is true', () => {
-            fixture.componentRef.setInput('challenge', {
-                ...defaultChallenge,
-                key: 'k1',
-                hasCodingChallenge: true,
-                solved: true
-            })
-            fixture.componentRef.setInput('highlightCodingChallenge', true)
-            fixture.detectChanges()
-            const codingBadge = Array.from((fixture.nativeElement as HTMLElement).querySelectorAll('.badge-group button.badge'))
-                .find((el) => el.querySelector('mat-icon')?.textContent?.includes('code'))
-            expect(codingBadge?.classList.contains('highlight-button')).toBe(true)
-
-            fixture.componentRef.setInput('highlightCodingChallenge', false)
-            fixture.detectChanges()
-            expect(codingBadge?.classList.contains('highlight-button')).toBe(false)
-        })
-
-=======
->>>>>>> main
         it('should render the hint badge with counts and lightbulb icon when hints are available', () => {
             fixture.componentRef.setInput('challenge', {
                 ...defaultChallenge,

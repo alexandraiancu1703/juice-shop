@@ -5,27 +5,6 @@
 
 @use '../../styles/variables' as *;
 
-<<<<<<< HEAD
-mat-card {
-  height: auto;
-  min-width: 510px;
-  width: 25%;
-  padding: $space-l $space-xl;
-}
-
-@media (max-width: 599.98px) {
-  mat-card {
-    width: 100%;
-    min-width: auto;
-    margin-bottom: $space-l;
-    margin-left: $space-m;
-    margin-right: $space-m;
-  }
-}
-
-mat-form-field {
-  margin-bottom: $space-m;
-=======
 .page-center {
   display: flex;
   justify-content: center;
@@ -40,7 +19,6 @@ mat-card {
 
 #submitButton {
   float: right;
->>>>>>> main
 }
 
 .form-container {
@@ -49,22 +27,6 @@ mat-card {
   position: relative;
 }
 
-<<<<<<< HEAD
-.actions {
-  display: flex;
-  justify-content: space-between;
-  margin-top: $space-m;
-}
-
-.center-container {
-  align-items: stretch;
-  display: flex;
-  justify-content: center;
-}
-
-.hint-spacing {
-  margin-left: $space-2xs;
-=======
 .form-container mat-form-field {
   width: 100%;
 }
@@ -81,7 +43,6 @@ mat-card {
   clear: both;
   content: '';
   display: table;
->>>>>>> main
 }
 
 input::-webkit-outer-spin-button,
@@ -90,8 +51,6 @@ input::-webkit-inner-spin-button {
   -moz-appearance: none;
   margin: 0;
 }
-<<<<<<< HEAD
-=======
 
 .mat-mdc-form-field-hint {
   align-items: center;
@@ -115,4 +74,3 @@ mat-error {
 .hint-spacing {
   margin-left: $space-2xs;
 }
->>>>>>> main
