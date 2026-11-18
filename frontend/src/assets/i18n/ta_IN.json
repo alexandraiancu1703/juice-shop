@@ -6,8 +6,13 @@
   "TITLE_LOGIN": "Login",
   "MANDATORY_EMAIL": "Please provide an email address.",
   "MANDATORY_PASSWORD": "Please provide a password.",
+<<<<<<< HEAD
   "LABEL_EMAIL": "மின்னஞ்சல்",
   "LABEL_PASSWORD": "கடவுச்சொல்",
+=======
+  "LABEL_EMAIL": "Email",
+  "LABEL_PASSWORD": "Password",
+>>>>>>> main
   "SHOW_PASSWORD_ADVICE": "Show password advice",
   "LOWER_CASE_CRITERIA_MSG": "contains at least one lower character",
   "UPPER_CASE_CRITERIA_MSG": "contains at least one upper character",
@@ -16,8 +21,11 @@
   "MIN_CHARS_CRITERIA_MSG": "contains at least {{value}} characters",
   "BTN_LOGIN": "Log in",
   "BTN_GOOGLE_LOGIN": "Log in with Google",
+<<<<<<< HEAD
   "BTN_PASSKEY_LOGIN": "Log in with Passkey",
   "PASSKEY_LOGIN_FAILED": "Passkey login failed.",
+=======
+>>>>>>> main
   "REMEMBER_ME": "Remember me",
   "NO_CUSTOMER": "Not yet a customer?",
   "ALREADY_A_CUSTOMER": "Already a customer?",
@@ -32,7 +40,11 @@
   "CONFIRM_REGISTER": "Registration completed successfully. You can now log in.",
   "TITLE_LOGOUT": "Logout",
   "CONFIRM_LOGGED_OUT": "You have been logged out.",
+<<<<<<< HEAD
   "TITLE_CONTACT": "தொடர்பு",
+=======
+  "TITLE_CONTACT": "Contact",
+>>>>>>> main
   "MANDATORY_COMMENT": "Please provide a comment.",
   "INVALID_COMMENT_LENGTH": "Comment length must be {{length}} characters.",
   "MAX_TEXTAREA_LENGTH": "Max. {{length}} characters",
@@ -46,11 +58,19 @@
   "BTN_SUBMIT": "Submit",
   "TITLE_ABOUT": "About Us",
   "SECTION_CORPORATE_HISTORY": "Corporate History & Policy",
+<<<<<<< HEAD
   "SECTION_CUSTOMER_FEEDBACK": "வாடிக்கையாளர் கருத்து",
   "SECTION_SETTINGS": "Settings",
   "LABEL_SHOW_TOOL_CALLS": "Show tool calls in AI chat",
   "SECTION_AI_CHAT": "AI அரட்டை",
   "TAG_IMPROVED": "புதுப்பிக்கப்பட்டது",
+=======
+  "SECTION_CUSTOMER_FEEDBACK": "Customer Feedback",
+  "SECTION_SETTINGS": "Settings",
+  "LABEL_SHOW_TOOL_CALLS": "Show tool calls in AI chat",
+  "SECTION_AI_CHAT": "AI Chat",
+  "TAG_IMPROVED": "Improved",
+>>>>>>> main
   "ASK_ME_ANYTHING_PLACEHOLDER": "Ask me anything",
   "SECTION_SOCIAL_MEDIA": "Follow us on Social Media",
   "LINK_TERMS_OF_USE": "Check out our boring terms of use if you are interested in such lame stuff.",
@@ -75,7 +95,11 @@
   "LABEL_PRICE": "Price",
   "LABEL_BONUS": "Bonus",
   "LABEL_IMAGE": "Image",
+<<<<<<< HEAD
   "TITLE_BASKET": "உங்கள் கூடை",
+=======
+  "TITLE_BASKET": "Your Basket",
+>>>>>>> main
   "LABEL_QUANTITY": "Quantity",
   "LABEL_TOTAL_PRICE": "Total Price",
   "CHECKOUT_FOR_BONUS_POINTS": "You will gain {{bonus}} Bonus Points from this order!",
@@ -188,6 +212,7 @@
   "LABEL_TWO_FACTOR_AUTH_TOKEN": "2FA Token",
   "CONFIRM_2FA_SETUP": "Setup of Two-Factor Authentication successfully completed.",
   "CONFIRM_2FA_DISABLE": "Two-Factor Authentication has been removed.",
+<<<<<<< HEAD
   "TITLE_MANAGE_PASSKEYS": "Manage Passkeys",
   "MANAGE_PASSKEYS_DESCRIPTION": "Passkeys let you log in without a password, using your device's screen lock or a security key.",
   "MANAGE_PASSKEYS_EMPTY": "You have not registered any passkeys yet.",
@@ -197,6 +222,8 @@
   "PASSKEY_ADDED_ON": "Added {{date}}",
   "CONFIRM_PASSKEY_ADDED": "Your passkey has been added.",
   "CONFIRM_PASSKEY_REMOVED": "Your passkey has been removed.",
+=======
+>>>>>>> main
   "INVALID_TWO_FACTOR_AUTH_TOKEN": "The token appears to be invalid.",
   "UNAUTHORIZED_PAGE_ACCESS_ERROR": "You are not allowed to access this page!",
   "TITLE_PRIVACY_POLICY": "Privacy Policy",
@@ -206,7 +233,11 @@
   "MENU": "Menu",
   "LABEL_OR": "or",
   "COMPANY": "Company",
+<<<<<<< HEAD
   "ADD_BASKET": "கூடையில் சேர்",
+=======
+  "ADD_BASKET": "Add to Basket",
+>>>>>>> main
   "BTN_SHOW_ALL": "Show all",
   "BTN_SHOW_UNAVAILABLE": "Show unavailable",
   "INFO_DISABLED_CHALLENGES": "{{num}} challenges are unavailable on {{env}} due to <a href='https://pwning.owasp-juice.shop/companion-guide/latest/part1/challenges.html#_potentially_dangerous_challenges'>security concerns</a> or technical incompatibility!",
@@ -216,7 +247,11 @@
   "TYPE_THESE_LETTERS": "Type these {{length}} letters",
   "BTN_REQUEST": "Request",
   "EXPORT_LABEL": "Export Format",
+<<<<<<< HEAD
   "ACCOUNT": "கணக்கு",
+=======
+  "ACCOUNT": "Account",
+>>>>>>> main
   "TITLE_TWO_FACTOR_AUTH_CONFIG": "2FA Configuration",
   "LABEL_CONFIRM_CURRENT_PASSWORD": "Confirm your current password",
   "LABEL_INITIAL_2FA_TOKEN": "Initial token from your authenticator",
@@ -326,7 +361,11 @@
   "NO_ORDERS_PLACED": "You have not placed any orders yet.",
   "LABEL_MARK_AS_DELIVERED": "Mark as delivered",
   "LABEL_MARK_AS_TRANSIT": "Mark as in transit",
+<<<<<<< HEAD
   "LABEL_PHOTO_WALL": "புகைப்படச் சுவர்",
+=======
+  "LABEL_PHOTO_WALL": "Photo Wall",
+>>>>>>> main
   "LABEL_SHARE_A_MEMORY": "Share a memory",
   "MANDATORY_CAPTION": "Please enter a caption",
   "LABEL_CAPTION": "Caption",
@@ -403,11 +442,15 @@
   "TAG_EXTERNAL_DEPENDENCY_DESCRIPTION": "Marks challenges strictly depending on an external service, local endpoint, or API key in order to be solvable.",
   "TAG_EXTERNAL_DEPENDENCY_PRESENT": "{{dependency}} was available during server start. This challenge should work as intended unless {{dependency}} becomes unavailable at runtime.",
   "TAG_EXTERNAL_DEPENDENCY_MISSING": "{{dependency}} was not available during server start. This challenge will likely not work. Click to read the documentation for setting up this dependency.",
+<<<<<<< HEAD
   "TAG_DEPENDENCY": "Dependency",
+=======
+>>>>>>> main
   "TAG_WITH_CODING_CHALLENGE": "With Coding Challenge",
   "TAG_WITH_CODING_CHALLENGE_DESCRIPTION": "Marks a challenge that contains an associated coding challenge.",
   "TAG_AI/LLM": "AI / LLM",
   "TAG_AI/LLM_DESCRIPTION": "Marks challenges that require the use of an AI language model to be solved.",
+<<<<<<< HEAD
   "TAG_PASSKEY/WEBAUTHN": "Passkey / WebAuthn",
   "TAG_PASSKEY/WEBAUTHN_DESCRIPTION": "Marks challenges that revolve around passwordless login with Passkeys (WebAuthn).",
   "TAG_JWT": "JWT",
@@ -428,6 +471,8 @@
   "TAG_GROUP_TECHNIQUE": "Technique",
   "TAG_GROUP_TECHNOLOGY": "Technology",
   "TAG_GROUP_OTHER": "Other",
+=======
+>>>>>>> main
   "CATEGORY_BROKEN_ACCESS_CONTROL": "Broken Access Control",
   "CATEGORY_BROKEN_ANTI_AUTOMATION": "Broken Anti Automation",
   "CATEGORY_BROKEN_AUTHENTICATION": "Broken Authentication",

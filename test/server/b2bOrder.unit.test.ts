@@ -56,6 +56,7 @@ void describe('b2bOrder', () => {
     assert.equal(challenges.rceChallenge.solved, false)
   })
 
+<<<<<<< HEAD
   void it('returns order details when evaluation succeeds', () => {
     req.body.cid = 'B2B-123'
     req.body.orderLinesData = '({ productId: 12, quantity: 1 })'
@@ -81,6 +82,8 @@ void describe('b2bOrder', () => {
     assert.ok(res.json.mock.calls[0].arguments[0].paymentDue)
   })
 
+=======
+>>>>>>> main
   void it('deserializing broken JSON should not solve "rceChallenge"', () => {
     req.body.orderLinesData = '{ "productId: 28'
 

@@ -153,11 +153,17 @@ describe('/rest/products/reviews', () => {
           const responseJson = await response.json()
           const reviewId = responseJson.data[0]._id
 
+<<<<<<< HEAD
           await Promise.all([
             sendPostRequest(reviewId),
             sendPostRequest(reviewId),
             sendPostRequest(reviewId)
           ])
+=======
+          void sendPostRequest(reviewId)
+          void sendPostRequest(reviewId)
+          void sendPostRequest(reviewId)
+>>>>>>> main
         }
       })
       cy.expectChallengeSolved({ challenge: 'Multiple Likes' })

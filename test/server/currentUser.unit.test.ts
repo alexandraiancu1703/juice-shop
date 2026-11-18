@@ -7,14 +7,18 @@ import { describe, it, beforeEach, mock } from 'node:test'
 import assert from 'node:assert/strict'
 import { retrieveLoggedInUser } from '../../routes/currentUser'
 import { authenticatedUsers } from '../../lib/insecurity'
+<<<<<<< HEAD
 import * as security from '../../lib/insecurity'
 import { challenges } from '../../data/datacache'
 import type { Challenge } from '@juice-shop/data/types'
+=======
+>>>>>>> main
 import type { UserModel } from '@juice-shop/models/user'
 
 void describe('currentUser', () => {
   let req: any
   let res: any
+<<<<<<< HEAD
   let save: any
 
   beforeEach(() => {
@@ -25,6 +29,12 @@ void describe('currentUser', () => {
     })
     challenges.passwordHashLeakChallenge = { solved: false, save } as unknown as Challenge
     challenges.emailLeakChallenge = { solved: false, save } as unknown as Challenge
+=======
+
+  beforeEach(() => {
+    req = { cookies: {}, query: {} }
+    res = { json: mock.fn() }
+>>>>>>> main
   })
 
   void it('should return neither ID nor email if no cookie was present in the request headers', () => {
@@ -48,6 +58,7 @@ void describe('currentUser', () => {
     assert.equal(res.json.mock.calls.length, 1)
     assert.deepEqual(res.json.mock.calls[0].arguments[0], { user: { id: 1, email: 'admin@juice-sh.op', lastLoginIp: '0.0.0.0', profileImage: '/assets/public/images/uploads/default.svg' } })
   })
+<<<<<<< HEAD
 
   void it('should filter specific requested fields and solve passwordHashLeakChallenge if password is leaked', () => {
     const token = security.authorize({ data: { id: 2, email: 'user@juice-sh.op', password: 'hashedpassword' } })
@@ -91,4 +102,6 @@ void describe('currentUser', () => {
     assert.equal(res.json.mock.calls.length, 1)
     assert.deepEqual(res.json.mock.calls[0].arguments[0], { user: { id: undefined, email: undefined, lastLoginIp: undefined, profileImage: undefined } })
   })
+=======
+>>>>>>> main
 })

@@ -5,6 +5,7 @@
 
 <mat-dialog-content>
   <div class="container column-layout">
+<<<<<<< HEAD
     <h1>{{ 'LABEL_EDIT_REVIEW' | translate }}</h1>
     <div>
       <mat-form-field appearance="outline" color="tertiary" hintLabel="{{ 'MAX_TEXTAREA_LENGTH' | translate: { length: maxReviewLength } }}" floatLabel="always">
@@ -19,6 +20,19 @@
         }
         @if (reviewForm.message().getError('maxLength')) {
           <mat-error>{{ 'MAX_TEXTAREA_LENGTH' | translate: { length: maxReviewLength } }}</mat-error>
+=======
+    <h1 translate>LABEL_EDIT_REVIEW</h1>
+    <div>
+      <mat-form-field appearance="outline" color="tertiary" hintLabel="Max 160 characters" floatLabel="always">
+        <mat-label translate>LABEL_REVIEW</mat-label>
+        <textarea [formControl]="editReviewControl" #textPut matInput
+          placeholder="{{'WRITE_REVIEW_PLACEHOLDER' | translate}}"
+          matTextareaAutosize matAutosizeMinRows="2" maxlength="160"
+        matAutosizeMaxRows="4" aria-label="Text field to edit a product review"  (focus)="this.error=null"></textarea>
+        <mat-hint align="end">{{textPut.value?.length || 0}}/160</mat-hint>
+        @if (editReviewControl.invalid) {
+          <mat-error translate>MANDATORY_REVIEW</mat-error>
+>>>>>>> main
         }
       </mat-form-field>
     </div>
@@ -31,7 +45,11 @@
     <span>{{'BTN_CLOSE' | translate}}</span>
   </button>
   <button type="submit" (click)="editReview()" mat-raised-button class="submit-button" color="primary" aria-label="Send the review"
+<<<<<<< HEAD
     [disabled]="reviewForm.message().invalid()">
+=======
+    [disabled]="editReviewControl.invalid">
+>>>>>>> main
     <mat-icon>send</mat-icon>
     <span>{{'BTN_SUBMIT' | translate}}</span>
   </button>

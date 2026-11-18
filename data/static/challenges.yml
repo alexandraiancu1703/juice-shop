@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+---
+>>>>>>> main
 -
   name: 'Password Hash Leak'
   category: 'Sensitive Data Exposure'
@@ -205,8 +209,11 @@
 -
   name: 'Christmas Special'
   category: 'Injection'
+<<<<<<< HEAD
   tags:
     - SQL
+=======
+>>>>>>> main
   description: 'Order the Christmas special offer of 2014.'
   difficulty: 4
   hints:
@@ -280,8 +287,11 @@
 -
   name: 'Database Schema'
   category: 'Injection'
+<<<<<<< HEAD
   tags:
     - SQL
+=======
+>>>>>>> main
   description: 'Exfiltrate the entire DB schema definition via SQL Injection.'
   difficulty: 3
   hints:
@@ -347,8 +357,11 @@
 -
   name: 'Ephemeral Accountant'
   category: 'Injection'
+<<<<<<< HEAD
   tags:
     - SQL
+=======
+>>>>>>> main
   description: 'Log in with the (non-existing) accountant <i>acc0unt4nt@juice-sh.op</i> without ever registering that user.'
   difficulty: 4
   hints:
@@ -441,8 +454,11 @@
 -
   name: 'Forged Review'
   category: 'Broken Access Control'
+<<<<<<< HEAD
   tags:
     - NoSQL/MongoDB
+=======
+>>>>>>> main
   description: 'Post a product review as another user or edit any user''s existing review.'
   difficulty: 3
   hints:
@@ -455,8 +471,11 @@
 -
   name: 'Forged Signed JWT'
   category: 'Vulnerable Components'
+<<<<<<< HEAD
   tags:
     - JWT
+=======
+>>>>>>> main
   description: 'Forge an almost properly RSA-signed JWT token that impersonates the (non-existing) user <i>rsa_lord@juice-sh.op</i>.'
   difficulty: 6
   hints:
@@ -615,7 +634,10 @@
   tags:
     - Tutorial
     - Good for Demos
+<<<<<<< HEAD
     - SQL
+=======
+>>>>>>> main
   description: 'Log in with the administrator''s user account.'
   difficulty: 2
   hints:
@@ -648,7 +670,10 @@
   category: 'Injection'
   tags:
     - Tutorial
+<<<<<<< HEAD
     - SQL
+=======
+>>>>>>> main
   description: 'Log in with Bender''s user account.'
   difficulty: 3
   hints:
@@ -665,7 +690,10 @@
   category: 'Broken Authentication'
   tags:
     - Code Analysis
+<<<<<<< HEAD
     - OAuth
+=======
+>>>>>>> main
   description: 'Log in with Bjoern''s Gmail account <i>without</i> previously changing his password, applying SQL Injection, or hacking his Google account.'
   difficulty: 4
   hints:
@@ -680,7 +708,10 @@
   category: 'Injection'
   tags:
     - Tutorial
+<<<<<<< HEAD
     - SQL
+=======
+>>>>>>> main
   description: 'Log in with Jim''s user account.'
   difficulty: 3
   hints:
@@ -748,8 +779,11 @@
 -
   name: 'Multiple Likes'
   category: 'Broken Anti Automation'
+<<<<<<< HEAD
   tags:
     - NoSQL/MongoDB
+=======
+>>>>>>> main
   description: 'Like any review at least three times as the same user.'
   difficulty: 6
   hints:
@@ -778,7 +812,10 @@
   category: 'Injection'
   tags:
     - Danger Zone
+<<<<<<< HEAD
     - NoSQL/MongoDB
+=======
+>>>>>>> main
   description: 'Let the server sleep for some time. (It has done more than enough hard work for you)'
   difficulty: 4
   hints:
@@ -796,7 +833,10 @@
   category: 'Injection'
   tags:
     - Danger Zone
+<<<<<<< HEAD
     - NoSQL/MongoDB
+=======
+>>>>>>> main
   description: 'All your orders are belong to us! Even the ones which don''t.'
   difficulty: 5
   hints:
@@ -812,8 +852,11 @@
 -
   name: 'NoSQL Manipulation'
   category: 'Injection'
+<<<<<<< HEAD
   tags:
     - NoSQL/MongoDB
+=======
+>>>>>>> main
   description: 'Update multiple product reviews at the same time.'
   difficulty: 4
   hints:
@@ -1142,8 +1185,11 @@
 -
   name: 'Two Factor Authentication'
   category: 'Broken Authentication'
+<<<<<<< HEAD
   tags:
     - 2FA/TOTP
+=======
+>>>>>>> main
   description: 'Solve the 2FA challenge for user "wurstbrot". (Disabling, bypassing or overwriting his 2FA settings does not count as a solution)'
   difficulty: 5
   hints:
@@ -1156,8 +1202,11 @@
 -
   name: 'Unsigned JWT'
   category: 'Vulnerable Components'
+<<<<<<< HEAD
   tags:
     - JWT
+=======
+>>>>>>> main
   description: 'Forge an essentially unsigned JWT token that impersonates the (non-existing) user <i>jwtn3d@juice-sh.op</i>.'
   difficulty: 5
   hints:
@@ -1192,8 +1241,11 @@
 -
   name: 'User Credentials'
   category: 'Injection'
+<<<<<<< HEAD
   tags:
     - SQL
+=======
+>>>>>>> main
   description: 'Retrieve a list of all user credentials via SQL Injection.'
   difficulty: 4
   hints:
@@ -1279,7 +1331,10 @@
   category: 'XXE'
   tags:
     - Danger Zone
+<<<<<<< HEAD
     - XML
+=======
+>>>>>>> main
   description: 'Retrieve the content of <code>C:\Windows\system.ini</code> or <code>/etc/passwd</code> from the server.'
   difficulty: 3
   hints:
@@ -1296,7 +1351,10 @@
   category: 'XXE'
   tags:
     - Danger Zone
+<<<<<<< HEAD
     - XML
+=======
+>>>>>>> main
   description: 'Give the server something to chew on for quite a while.'
   difficulty: 5
   hints:
@@ -1597,8 +1655,11 @@
 -
   name: 'Login Cloud Admin'
   category: 'Sensitive Data Exposure'
+<<<<<<< HEAD
   tags:
     - JWT
+=======
+>>>>>>> main
   description: 'Log in with the cloud admin''s user account <i>without</i> using SQL Injection.'
   difficulty: 4
   hints:
@@ -1620,6 +1681,7 @@
     - 'Not every outdated-looking version number is actually vulnerable. Do your research on official CVE databases or vendor advisories.'
   mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html'
   key: vulnerableDockerImageChallenge
+<<<<<<< HEAD
 -
   name: 'Passkey Bypass'
   category: 'Broken Authentication'
@@ -1647,3 +1709,5 @@
     - 'What would the shop do if it was asked to register a passkey it already knows?'
   mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html'
   key: passkeyCredentialOverwriteChallenge
+=======
+>>>>>>> main

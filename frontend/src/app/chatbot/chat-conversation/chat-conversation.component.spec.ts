@@ -226,6 +226,7 @@ describe('ChatConversationComponent', () => {
         expect(component.showToolCalls()).toBe(false)
     })
 
+<<<<<<< HEAD
     describe('message editing', () => {
         beforeEach(() => {
             component.messages.set([
@@ -300,6 +301,8 @@ describe('ChatConversationComponent', () => {
         })
     })
 
+=======
+>>>>>>> main
     describe('template rendering', () => {
         it('should render the chat header with back link, avatar and bot title', () => {
             const compiled: HTMLElement = fixture.nativeElement
@@ -403,6 +406,7 @@ describe('ChatConversationComponent', () => {
             expect(compiled.querySelector('.previous-tool-calls')).toBeTruthy()
             expect(compiled.querySelectorAll('.tool-call-card.mini').length).toBe(1)
         })
+<<<<<<< HEAD
 
         it('should render an edit button only for user messages and not while loading', () => {
             component.messages.set([
@@ -483,6 +487,8 @@ describe('ChatConversationComponent', () => {
             textarea.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter' }))
             expect(saveSpy).toHaveBeenCalledTimes(1)
         })
+=======
+>>>>>>> main
     })
 
     describe('init configuration handling', () => {

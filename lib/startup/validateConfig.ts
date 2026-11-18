@@ -5,7 +5,11 @@
 
 import config from 'config'
 import process from 'node:process'
+<<<<<<< HEAD
 import colors from '../colors'
+=======
+import colors from 'colors/safe'
+>>>>>>> main
 
 import { ValidationSchema } from '../config.schema'
 import type { Memory as MemoryConfig, Product as ProductConfig } from '../config.schema'

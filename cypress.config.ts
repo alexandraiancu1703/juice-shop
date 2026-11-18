@@ -4,7 +4,10 @@ import config from 'config'
 import type { Memory as MemoryConfig, Product as ProductConfig } from './lib/config.schema'
 import * as utils from './lib/utils'
 import { generateSync } from 'otplib'
+<<<<<<< HEAD
 import { buildAssertion, buildAttestation, loadVictimCredential } from './test/api/helpers/passkey'
+=======
+>>>>>>> main
 
 export default defineConfig({
   projectId: '3hrkhu',
@@ -12,6 +15,10 @@ export default defineConfig({
   retries: {
     runMode: 2
   },
+<<<<<<< HEAD
+=======
+  allowCypressEnv: false,
+>>>>>>> main
   e2e: {
     baseUrl: 'http://localhost:3000',
     specPattern: 'test/cypress/e2e/**.spec.ts',
@@ -74,6 +81,7 @@ export default defineConfig({
         },
         isWindows () {
           return utils.isWindows()
+<<<<<<< HEAD
         },
         async ForgePasskeyAssertion ({ challenge }: { challenge: string }) {
           return buildAssertion(await loadVictimCredential(), challenge, { tamper: true })
@@ -83,6 +91,8 @@ export default defineConfig({
         },
         async SignPasskeyAssertion ({ challenge, privateKeyPem }: { challenge: string, privateKeyPem: string }) {
           return buildAssertion({ ...await loadVictimCredential(), privateKeyPem }, challenge, { tamper: false })
+=======
+>>>>>>> main
         }
       })
     }

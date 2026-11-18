@@ -156,6 +156,7 @@ describe('ServerStartedNotificationComponent', () => {
         expect(component.hackingProgress.autoRestoreMessage).toBe('Translation of AUTO_RESTORE_PROGRESS_FAILED: error')
     })
 
+<<<<<<< HEAD
     it('should restore continueCodeFindIt and continueCodeFixIt on server start', () => {
         vi.spyOn(mockSocket, 'on')
         cookieService.put('continueCodeFindIt', 'FIND_IT_CODE')
@@ -181,6 +182,8 @@ describe('ServerStartedNotificationComponent', () => {
         expect(console.log).toHaveBeenCalledWith('FixItError')
     })
 
+=======
+>>>>>>> main
     it('do nothing if continueCode cookie is not present', () => {
         vi.spyOn(mockSocket, 'on')
         component.ngOnInit()

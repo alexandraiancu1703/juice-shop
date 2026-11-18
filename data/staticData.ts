@@ -28,6 +28,7 @@ export interface StaticUser {
   feedback?: StaticUserFeedback
   address?: StaticUserAddress[]
   card?: StaticUserCard[]
+<<<<<<< HEAD
   passkeys?: StaticUserPasskey[]
 }
 export interface StaticUserPasskey {
@@ -36,6 +37,8 @@ export interface StaticUserPasskey {
   counter?: number
   transports?: string
   aaguid?: string
+=======
+>>>>>>> main
 }
 export interface StaticUserSecurityQuestion {
   id: number
@@ -101,8 +104,11 @@ export interface StaticSecurityQuestions {
 export async function loadStaticSecurityQuestionsData (): Promise<StaticSecurityQuestions[]> {
   return await loadStaticData('securityQuestions') as StaticSecurityQuestions[]
 }
+<<<<<<< HEAD
 
 export type StaticTagGroups = Record<string, string[]>
 export async function loadStaticTagGroupsData (): Promise<StaticTagGroups> {
   return await loadStaticData('tags') as StaticTagGroups
 }
+=======
+>>>>>>> main

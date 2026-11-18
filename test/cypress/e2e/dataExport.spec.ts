@@ -1,9 +1,13 @@
 describe('/#/privacy-security/data-export', () => {
   describe('challenge "dataExportChallenge"', () => {
     beforeEach(() => {
+<<<<<<< HEAD
       cy.intercept('GET', '/api/SecurityQuestions/').as('securityQuestions')
       cy.visit('/#/register')
       cy.wait('@securityQuestions')
+=======
+      cy.visit('/#/register')
+>>>>>>> main
 
       cy.task<string>('GetFromConfig', 'application.domain').then(
         (appDomain: string) => {
@@ -13,7 +17,11 @@ describe('/#/privacy-security/data-export', () => {
       cy.get('#passwordControl').focus().type('admun123')
       cy.get('#repeatPasswordControl').focus().type('admun123')
 
+<<<<<<< HEAD
       cy.get('#securityQuestionControl').click()
+=======
+      cy.get('#securityQuestionControl').focus().click({ force: true })
+>>>>>>> main
       cy.get('.mat-mdc-option')
         .contains('Your eldest siblings middle name?')
         .click()

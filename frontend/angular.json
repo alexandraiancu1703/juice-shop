@@ -78,6 +78,7 @@
               "extractLicenses": true,
               "statsJson": true
             },
+<<<<<<< HEAD
             "development": {},
             "development-serve": {
               "fileReplacements": [
@@ -87,14 +88,21 @@
                 }
               ]
             }
+=======
+            "development": {}
+>>>>>>> main
           },
           "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular/build:dev-server",
           "options": {
+<<<<<<< HEAD
             "buildTarget": "frontend:build:development-serve",
             "proxyConfig": "proxy.conf.json"
+=======
+            "buildTarget": "frontend:build"
+>>>>>>> main
           },
           "configurations": {
             "production": {

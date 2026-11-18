@@ -22,8 +22,13 @@ void describe('verify', () => {
   let err: any
 
   beforeEach(() => {
+<<<<<<< HEAD
     req = { body: {}, headers: {}, header: mock.fn(() => undefined), app: { locals: {} }, query: {} }
     res = { json: mock.fn(), status: mock.fn(() => res), send: mock.fn() }
+=======
+    req = { body: {}, headers: {}, header: mock.fn(() => undefined) }
+    res = { json: mock.fn() }
+>>>>>>> main
     next = mock.fn()
     save = () => ({
       then () { }
@@ -373,6 +378,7 @@ void describe('verify', () => {
       assert.ok(!verify.checkSystemPromptSimilarity(s1, s2, 0.9))
     })
   })
+<<<<<<< HEAD
 
   void describe('captchaBypassChallenge', () => {
     beforeEach(() => {
@@ -439,4 +445,6 @@ void describe('verify', () => {
       assert.equal(next.mock.calls.length, 1)
     })
   })
+=======
+>>>>>>> main
 })

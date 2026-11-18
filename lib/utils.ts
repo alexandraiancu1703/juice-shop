@@ -5,10 +5,16 @@
 
 import packageJson from '../package.json'
 import fs from 'node:fs'
+<<<<<<< HEAD
 import http from 'node:http'
 import https from 'node:https'
 import logger from './logger'
 import config from 'config'
+=======
+import logger from './logger'
+import config from 'config'
+import download from 'download'
+>>>>>>> main
 import { ProxyAgent } from 'proxy-agent'
 import crypto from 'node:crypto'
 import clarinet from 'clarinet'
@@ -108,6 +114,7 @@ export const extractFilename = (url: string) => {
   return file
 }
 
+<<<<<<< HEAD
 interface DownloadOptions {
   agent?: http.Agent
 }
@@ -149,6 +156,12 @@ export const downloadToFile = async (
   url: string,
   dest: string,
   downloadData: (url: string, options: DownloadOptions) => Promise<Buffer> = download
+=======
+export const downloadToFile = async (
+  url: string,
+  dest: string,
+  downloadData: (url: string, options: download.DownloadOptions) => Promise<Buffer> = download
+>>>>>>> main
 ) => {
   try {
     const data = await downloadData(url, { agent: proxyAgent })

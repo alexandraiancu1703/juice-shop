@@ -120,7 +120,10 @@ void describe('preconditionValidation', () => {
 
   void describe('checkIfOllamaModelAvailable', () => {
     let fetchStub: any
+<<<<<<< HEAD
     const originalLlmApiKey = process.env.LLM_API_KEY
+=======
+>>>>>>> main
 
     beforeEach(() => {
       fetchStub = mock.method(global, 'fetch')
@@ -128,7 +131,10 @@ void describe('preconditionValidation', () => {
 
     afterEach(() => {
       fetchStub.mock.restore()
+<<<<<<< HEAD
       process.env.LLM_API_KEY = originalLlmApiKey
+=======
+>>>>>>> main
     })
 
     void it('should succeed when model is listed in Ollama response', async () => {
@@ -166,6 +172,7 @@ void describe('preconditionValidation', () => {
       await checkIfLlmModelAvailable('http://localhost:11434/v1')
       assert.equal(fetchStub.mock.calls.length, 1)
     })
+<<<<<<< HEAD
 
     void it('should attach Authorization header when LLM_API_KEY environment variable is present', async () => {
       process.env.LLM_API_KEY = 'test-token'
@@ -182,6 +189,8 @@ void describe('preconditionValidation', () => {
       assert.equal(fetchStub.mock.calls.length, 1)
       assert.equal(fetchStub.mock.calls[0].arguments[1]?.headers?.Authorization, undefined)
     })
+=======
+>>>>>>> main
   })
 
   void describe('checkIfDomainReachable', () => {

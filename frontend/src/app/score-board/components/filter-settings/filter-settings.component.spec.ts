@@ -1,4 +1,5 @@
 import { type ComponentFixture, TestBed } from '@angular/core/testing'
+<<<<<<< HEAD
 import { of } from 'rxjs'
 import { By } from '@angular/platform-browser'
 import { MatSelect } from '@angular/material/select'
@@ -23,12 +24,28 @@ const TAG_GROUPS_FIXTURE = {
     Technique: ['Brute Force', 'Code Analysis', 'OSINT'],
     Technology: ['AI/LLM', 'Web3', 'Passkey/WebAuthn', 'JWT', 'NoSQL/MongoDB', 'OAuth', 'SQL', '2FA/TOTP', 'XML']
 }
+=======
+import { FilterSettingsComponent } from './filter-settings.component'
+import { CategoryFilterComponent } from './components/category-filter/category-filter.component'
+import { DEFAULT_FILTER_SETTING } from '../../filter-settings/FilterSetting'
+import { TranslateModule } from '@ngx-translate/core'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input'
+import { MatSelectModule } from '@angular/material/select'
+import { MatTooltipModule } from '@angular/material/tooltip'
+import { MatDialogModule, MatDialog } from '@angular/material/dialog'
+import { DifficultySelectionSummaryPipe } from './pipes/difficulty-selection-summary.pipe'
+import { LocalBackupService } from '../../../Services/local-backup.service'
+>>>>>>> main
 
 describe('FilterSettingsComponent', () => {
     let component: FilterSettingsComponent
     let fixture: ComponentFixture<FilterSettingsComponent>
     let dialog: MatDialog
+<<<<<<< HEAD
     let translateService: TranslateService
+=======
+>>>>>>> main
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
@@ -50,12 +67,15 @@ describe('FilterSettingsComponent', () => {
                         save: () => null,
                         restore: () => null
                     }
+<<<<<<< HEAD
                 },
                 {
                     provide: TagsService,
                     useValue: {
                         getTagGroups: () => of(TAG_GROUPS_FIXTURE)
                     }
+=======
+>>>>>>> main
                 }
             ]
         }).compileComponents()
@@ -63,8 +83,11 @@ describe('FilterSettingsComponent', () => {
         fixture = TestBed.createComponent(FilterSettingsComponent)
         component = fixture.componentInstance
         dialog = TestBed.inject(MatDialog)
+<<<<<<< HEAD
         translateService = TestBed.inject(TranslateService)
         translateService.use('en')
+=======
+>>>>>>> main
 
         component.allChallenges = []
         component.filterSetting = { ...DEFAULT_FILTER_SETTING }
@@ -183,6 +206,7 @@ describe('FilterSettingsComponent', () => {
         component.ngOnChanges()
         expect(component.tags).toEqual(['Apple', 'External Dependency', 'Zebra'])
     })
+<<<<<<< HEAD
 
     it('should cluster tags into alphabetical groups with alphabetical tags within each group', () => {
         component.allChallenges = [
@@ -339,4 +363,6 @@ describe('FilterSettingsComponent', () => {
         expect(optgroups[0].label).toBe('Einschränkungen Deutsch')
         expect(optgroups[1].label).toBe('Technologie Deutsch')
     })
+=======
+>>>>>>> main
 })

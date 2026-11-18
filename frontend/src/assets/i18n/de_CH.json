@@ -16,8 +16,11 @@
   "MIN_CHARS_CRITERIA_MSG": "beschteit us mindeschtens {{value}} Zeiche",
   "BTN_LOGIN": "Amäude",
   "BTN_GOOGLE_LOGIN": "Mit Google amäude",
+<<<<<<< HEAD
   "BTN_PASSKEY_LOGIN": "Mit Passkey anmelden",
   "PASSKEY_LOGIN_FAILED": "Passkey-Anmeldung fehlgeschlagen.",
+=======
+>>>>>>> main
   "REMEMBER_ME": "Agmäudet blibe",
   "NO_CUSTOMER": "No ke Chund?",
   "ALREADY_A_CUSTOMER": "Bereits ein Kunde?",
@@ -188,6 +191,7 @@
   "LABEL_TWO_FACTOR_AUTH_TOKEN": "Zwöifaktorouthentisierigs-Token",
   "CONFIRM_2FA_SETUP": "D Irichtig vor Zwöifaktorouthentisierig isch erfougriich gsi.",
   "CONFIRM_2FA_DISABLE": "Zwöifaktorouthentisierig isch ume wäg.",
+<<<<<<< HEAD
   "TITLE_MANAGE_PASSKEYS": "Passkeys verwalten",
   "MANAGE_PASSKEYS_DESCRIPTION": "Passkeys erlauben dir, dich ohne Passwort anzumelden, indem du die Displaysperre deines Geräts oder einen Sicherheitsschlüssel verwendest.",
   "MANAGE_PASSKEYS_EMPTY": "Du hast noch keine Passkeys registriert.",
@@ -197,6 +201,8 @@
   "PASSKEY_ADDED_ON": "Hinzugefügt am {{date}}",
   "CONFIRM_PASSKEY_ADDED": "Dein Passkey wurde hinzugefügt.",
   "CONFIRM_PASSKEY_REMOVED": "Dein Passkey wurde entfernt.",
+=======
+>>>>>>> main
   "INVALID_TWO_FACTOR_AUTH_TOKEN": "Z Token schiint ungüutig z si.",
   "UNAUTHORIZED_PAGE_ACCESS_ERROR": "Nüt da! Uf die Site hesch du ke Zuegriff. ",
   "TITLE_PRIVACY_POLICY": "Datenschutzerklärung",
@@ -403,11 +409,15 @@
   "TAG_EXTERNAL_DEPENDENCY_DESCRIPTION": "Markiert Herausforderungen, deren Lösung strikt abhängig von einem externen Dienst, lokalem Endpunkt oder API-Schlüssel ist.",
   "TAG_EXTERNAL_DEPENDENCY_PRESENT": "{{dependency}} war beim Serverstart verfügbar. Diese Herausforderung sollte wie beabsichtigt funktionieren, es sei denn, {{dependency}} wird zur Laufzeit nicht verfügbar.",
   "TAG_EXTERNAL_DEPENDENCY_MISSING": "{{dependency}} war beim Serverstart nicht verfügbar. Diese Herausforderung wird wahrscheinlich nicht funktionieren. Klicken Sie hier, um die Dokumentation zum Einrichten dieser Abhängigkeit zu lesen.",
+<<<<<<< HEAD
   "TAG_DEPENDENCY": "Abhängigkeit",
+=======
+>>>>>>> main
   "TAG_WITH_CODING_CHALLENGE": "Mit Programmierherausforderung",
   "TAG_WITH_CODING_CHALLENGE_DESCRIPTION": "Markiert eine Herausforderung, die eine zugehörige Programmierherausforderung enthält.",
   "TAG_AI/LLM": "AI / LLM",
   "TAG_AI/LLM_DESCRIPTION": "Markiert Herausforderungen, deren Lösung die Verwendung eines KI-Sprachmodells erfordert.",
+<<<<<<< HEAD
   "TAG_PASSKEY/WEBAUTHN": "Passkey / WebAuthn",
   "TAG_PASSKEY/WEBAUTHN_DESCRIPTION": "Markiert Herausforderungen, die sich um passwortlose Anmeldung mit Passkeys (WebAuthn) drehen.",
   "TAG_JWT": "JWT",
@@ -428,6 +438,8 @@
   "TAG_GROUP_TECHNIQUE": "Technique",
   "TAG_GROUP_TECHNOLOGY": "Technology",
   "TAG_GROUP_OTHER": "Other",
+=======
+>>>>>>> main
   "CATEGORY_BROKEN_ACCESS_CONTROL": "Fehler in der Zugriffskontrolle",
   "CATEGORY_BROKEN_ANTI_AUTOMATION": "Fehlerhafte Anti-Automatisierung",
   "CATEGORY_BROKEN_AUTHENTICATION": "Fehler in der Authentifizierung",

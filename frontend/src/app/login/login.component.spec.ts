@@ -27,10 +27,16 @@ import { MatDividerModule } from '@angular/material/divider'
 import { TranslateModule } from '@ngx-translate/core'
 import { MatGridListModule } from '@angular/material/grid-list'
 import { MatTooltipModule } from '@angular/material/tooltip'
+<<<<<<< HEAD
 import { HttpErrorResponse, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { ConfigurationService } from '../Services/configuration.service'
 import { BasketService } from '../Services/basket.service'
 import { PasskeyService } from '../Services/passkey.service'
+=======
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
+import { ConfigurationService } from '../Services/configuration.service'
+import { BasketService } from '../Services/basket.service'
+>>>>>>> main
 
 describe('LoginComponent', () => {
     let component: LoginComponent
@@ -39,7 +45,10 @@ describe('LoginComponent', () => {
     let configurationService: any
     let basketService: any
     let windowRefService: any
+<<<<<<< HEAD
     let passkeyService: any
+=======
+>>>>>>> main
     let location: Location
 
     beforeEach(async () => {
@@ -58,11 +67,14 @@ describe('LoginComponent', () => {
             mergeGuestBasketIntoUserBasket: vi.fn().mockReturnValue(of(undefined)),
             updateNumberOfCartItems: vi.fn()
         }
+<<<<<<< HEAD
         passkeyService = {
             loginOptions: vi.fn().mockName('PasskeyService.loginOptions'),
             loginVerify: vi.fn().mockName('PasskeyService.loginVerify'),
             createAssertion: vi.fn().mockName('PasskeyService.createAssertion')
         }
+=======
+>>>>>>> main
         windowRefService = {
             nativeWindow: {
                 location: {
@@ -95,7 +107,10 @@ describe('LoginComponent', () => {
                 { provide: UserService, useValue: userService },
                 { provide: ConfigurationService, useValue: configurationService },
                 { provide: BasketService, useValue: basketService },
+<<<<<<< HEAD
                 { provide: PasskeyService, useValue: passkeyService },
+=======
+>>>>>>> main
                 { provide: WindowRefService, useValue: windowRefService },
                 CookieService,
                 provideHttpClient(withInterceptorsFromDi()),
@@ -283,11 +298,16 @@ describe('LoginComponent', () => {
             expect(component.error()).toBeNull()
         })
 
+<<<<<<< HEAD
         it('should hide the Google login button but keep the passkey login when oauthUnavailable is true', () => {
+=======
+        it('should hide the OAuth login section when oauthUnavailable is true', () => {
+>>>>>>> main
             component.oauthUnavailable = true
             fixture.detectChanges()
             const compiled: HTMLElement = fixture.nativeElement
             expect(compiled.querySelector('#loginButtonGoogle')).toBeNull()
+<<<<<<< HEAD
             expect(compiled.querySelector('.breakLine')).toBeTruthy()
             expect(compiled.querySelector('#loginButtonPasskey')).toBeTruthy()
         })
@@ -297,6 +317,9 @@ describe('LoginComponent', () => {
             const passkeyButton = (fixture.nativeElement as HTMLElement).querySelector('#loginButtonPasskey') as HTMLButtonElement
             passkeyButton.click()
             expect(passkeySpy).toHaveBeenCalled()
+=======
+            expect(compiled.querySelector('.breakLine')).toBeNull()
+>>>>>>> main
         })
 
         it('should invoke googleLogin when the Google button is clicked', () => {
@@ -440,6 +463,7 @@ describe('LoginComponent', () => {
             localStorage.removeItem('totp_tmp_token')
         })
 
+<<<<<<< HEAD
         it('should log in with a passkey and store the returned authentication', async () => {
             passkeyService.createAssertion.mockResolvedValue({ id: 'cred' } as any)
             passkeyService.loginOptions.mockReturnValue(of({ options: { challenge: 'c' }, authToken: 'authToken' }))
@@ -499,6 +523,8 @@ describe('LoginComponent', () => {
             expect(passkeyService.loginVerify).not.toHaveBeenCalled()
         })
 
+=======
+>>>>>>> main
         it('should redirect via window.location.replace on googleLogin', () => {
             component.clientId = 'cid'
             component.redirectUri = 'http://localhost:4200'

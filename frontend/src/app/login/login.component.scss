@@ -52,12 +52,18 @@ mat-form-field {
   margin-right: $space-s;
 }
 
+<<<<<<< HEAD
 #loginButton {
+=======
+#loginButton,
+#loginButtonGoogle {
+>>>>>>> main
   margin-left: 20%;
   margin-top: $space-xl;
   width: 60%;
 }
 
+<<<<<<< HEAD
 .alternative-logins {
   display: grid;
   gap: $space-m;
@@ -75,6 +81,8 @@ mat-form-field {
   vertical-align: middle;
 }
 
+=======
+>>>>>>> main
 .breakLine {
   display: table;
 }

@@ -29,7 +29,11 @@ LABEL maintainer="Bjoern Kimminich <bjoern.kimminich@owasp.org>" \
     org.opencontainers.image.vendor="Open Worldwide Application Security Project" \
     org.opencontainers.image.documentation="https://help.owasp-juice.shop" \
     org.opencontainers.image.licenses="MIT" \
+<<<<<<< HEAD
     org.opencontainers.image.version="20.4.0-SNAPSHOT" \
+=======
+    org.opencontainers.image.version="20.3.0" \
+>>>>>>> main
     org.opencontainers.image.url="https://owasp-juice.shop" \
     org.opencontainers.image.source="https://github.com/juice-shop/juice-shop" \
     org.opencontainers.image.revision=$VCS_REF \

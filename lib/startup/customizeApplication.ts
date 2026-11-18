@@ -6,6 +6,11 @@
 import fs from 'node:fs'
 import config from 'config'
 import * as utils from '../utils'
+<<<<<<< HEAD
+=======
+// @ts-expect-error FIXME due to non-existing type definitions for replace
+import replace from 'replace'
+>>>>>>> main
 
 const customizeApplication = async () => {
   if (config.get<string>('application.name')) {
@@ -58,7 +63,17 @@ const customizeFavicon = async () => {
   if (!favicon) {
     return
   }
+<<<<<<< HEAD
   utils.replaceInFile('frontend/dist/frontend/index.html', /type="image\/x-icon" href="assets\/public\/.*"/, `type="image/x-icon" href="assets/public/${favicon}"`)
+=======
+  replace({
+    regex: /type="image\/x-icon" href="assets\/public\/.*"/,
+    replacement: `type="image/x-icon" href="assets/public/${favicon}"`,
+    paths: ['frontend/dist/frontend/index.html'],
+    recursive: false,
+    silent: true
+  })
+>>>>>>> main
 }
 
 const customizePromotionVideo = async () => {
@@ -88,17 +103,47 @@ export const retrieveCustomFile = async (
 
 const customizeTitle = () => {
   const title = `<title>${config.get<string>('application.name')}</title>`
+<<<<<<< HEAD
   utils.replaceInFile('frontend/dist/frontend/index.html', /<title>.*<\/title>/, title)
+=======
+  replace({
+    regex: /<title>.*<\/title>/,
+    replacement: title,
+    paths: ['frontend/dist/frontend/index.html'],
+    recursive: false,
+    silent: true
+  })
+>>>>>>> main
 }
 
 const customizeTheme = () => {
   const bodyClass = '"' + config.get<string>('application.theme') + '-theme"'
+<<<<<<< HEAD
   utils.replaceInFile('frontend/dist/frontend/index.html', /".*-theme"/, bodyClass)
+=======
+  replace({
+    regex: /".*-theme"/,
+    replacement: bodyClass,
+    paths: ['frontend/dist/frontend/index.html'],
+    recursive: false,
+    silent: true
+  })
+>>>>>>> main
 }
 
 const customizeCookieConsentBanner = () => {
   const contentProperty = '"content": { "message": "' + config.get<string>('application.cookieConsent.message') + '", "dismiss": "' + config.get<string>('application.cookieConsent.dismissText') + '", "link": "' + config.get<string>('application.cookieConsent.linkText') + '", "href": "' + config.get<string>('application.cookieConsent.linkUrl') + '" }'
+<<<<<<< HEAD
   utils.replaceInFile('frontend/dist/frontend/index.html', /"content": { "message": ".*", "dismiss": ".*", "link": ".*", "href": ".*" }/, contentProperty)
+=======
+  replace({
+    regex: /"content": { "message": ".*", "dismiss": ".*", "link": ".*", "href": ".*" }/,
+    replacement: contentProperty,
+    paths: ['frontend/dist/frontend/index.html'],
+    recursive: false,
+    silent: true
+  })
+>>>>>>> main
 }
 
 export default customizeApplication

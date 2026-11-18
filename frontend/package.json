@@ -1,6 +1,10 @@
 {
   "name": "frontend",
+<<<<<<< HEAD
   "version": "20.4.0-SNAPSHOT",
+=======
+  "version": "20.3.0",
+>>>>>>> main
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -41,13 +45,20 @@
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@ngx-translate/core": "^17.0.0",
     "@ngx-translate/http-loader": "^17.0.0",
+<<<<<<< HEAD
     "@simplewebauthn/browser": "^14.0.0",
+=======
+>>>>>>> main
     "@wagmi/core": "^0.5.8",
     "angularx-qrcode": "^21.0.5",
     "canvas-confetti": "^1.9.3",
     "codemirror": "^6.0.2",
     "cookieconsent": "^3.1.1",
+<<<<<<< HEAD
     "ethers": "^6.0.0",
+=======
+    "ethers": "^5.7.2",
+>>>>>>> main
     "flag-icons": "^6.9.2",
     "font-mfizz": "^2.4.1",
     "jwt-decode": "^4.0.0",

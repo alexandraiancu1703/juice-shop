@@ -49,7 +49,10 @@ describe('ScoreBoardComponent', () => {
     let challengeService
     let hintService
     let configService
+<<<<<<< HEAD
     let socket
+=======
+>>>>>>> main
 
     beforeEach(async () => {
         challengeService = {
@@ -62,7 +65,10 @@ describe('ScoreBoardComponent', () => {
         configService = {
             getApplicationConfiguration: vi.fn().mockName("ConfigurationService.getApplicationConfiguration")
         }
+<<<<<<< HEAD
         socket = { on: vi.fn(), off: vi.fn() }
+=======
+>>>>>>> main
         await TestBed.configureTestingModule({
             imports: [TranslateModule.forRoot(),
                 RouterTestingModule,
@@ -80,7 +86,10 @@ describe('ScoreBoardComponent', () => {
                 { provide: ChallengeService, useValue: challengeService },
                 { provide: HintService, useValue: hintService },
                 { provide: ConfigurationService, useValue: configService },
+<<<<<<< HEAD
                 { provide: SocketIoService, useValue: { socket: () => socket } },
+=======
+>>>>>>> main
                 provideHttpClient(withInterceptorsFromDi()),
                 provideHttpClientTesting()
             ]
@@ -240,6 +249,7 @@ describe('ScoreBoardComponent', () => {
             component.reset()
             expect(navSpy).toHaveBeenCalled()
         })
+<<<<<<< HEAD
 
         it('should trigger highlightTutorial for 1 second when Tutorial tag is selected', () => {
             vi.useFakeTimers()
@@ -285,6 +295,8 @@ describe('ScoreBoardComponent', () => {
                 vi.useRealTimers()
             }
         })
+=======
+>>>>>>> main
     })
 
     describe('repeatChallengeNotification', () => {
@@ -296,14 +308,22 @@ describe('ScoreBoardComponent', () => {
     })
 
     describe('unlockHint', () => {
+<<<<<<< HEAD
         it('should refresh challenges without re-running initialization on success', () => {
+=======
+        it('should re-run ngOnInit and remember the unlocked challenge key on success', () => {
+>>>>>>> main
             hintService.put.mockReturnValue(of({}))
             const spy = vi.spyOn(component, 'ngOnInit')
             component.unlockHint(7, 'challenge-3')
             expect(component.lastUnlockedChallengeKey).toBe('challenge-3')
+<<<<<<< HEAD
             expect(spy).not.toHaveBeenCalled()
             expect(challengeService.find).toHaveBeenCalledTimes(2)
             expect(socket.on).toHaveBeenCalledTimes(2)
+=======
+            expect(spy).toHaveBeenCalled()
+>>>>>>> main
         })
 
         it('should clear the last unlocked challenge key when no key is provided', () => {
@@ -315,6 +335,7 @@ describe('ScoreBoardComponent', () => {
     })
 
     describe('ngOnDestroy', () => {
+<<<<<<< HEAD
         it('should unsubscribe data and route subscriptions and detach the registered socket handlers', () => {
             const spies = (component as any).subscriptions.map((s: any) => vi.spyOn(s, 'unsubscribe'))
             component.ngOnDestroy()
@@ -322,6 +343,18 @@ describe('ScoreBoardComponent', () => {
             expect(socket.off).toHaveBeenCalledTimes(2)
             expect(socket.off.mock.calls[0]).toEqual(socket.on.mock.calls[0])
             expect(socket.off.mock.calls[1]).toEqual(socket.on.mock.calls[1])
+=======
+        it('should unsubscribe data and route subscriptions and detach socket handlers', () => {
+            const socket = { off: vi.fn() }
+            const ioService = TestBed.inject(SocketIoService) as any
+            // SocketIoService may not be provided as mock; guard:
+            if (ioService && ioService.socket) {
+                vi.spyOn(ioService, 'socket').mockReturnValue(socket as any)
+            }
+            const spies = (component as any).subscriptions.map((s: any) => vi.spyOn(s, 'unsubscribe'))
+            component.ngOnDestroy()
+            spies.forEach((spy: any) => expect(spy).toHaveBeenCalled())
+>>>>>>> main
         })
     })
 })

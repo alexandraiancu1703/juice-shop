@@ -16,8 +16,11 @@
   "MIN_CHARS_CRITERIA_MSG": "contém pelo menos {{value}} caracteres",
   "BTN_LOGIN": "Entrar",
   "BTN_GOOGLE_LOGIN": "Entrar com o Google",
+<<<<<<< HEAD
   "BTN_PASSKEY_LOGIN": "Log in with Passkey",
   "PASSKEY_LOGIN_FAILED": "Passkey login failed.",
+=======
+>>>>>>> main
   "REMEMBER_ME": "Lembrar-me",
   "NO_CUSTOMER": "Ainda não é um cliente ?",
   "ALREADY_A_CUSTOMER": "Já é um cliente?",
@@ -188,6 +191,7 @@
   "LABEL_TWO_FACTOR_AUTH_TOKEN": "Token 2FA",
   "CONFIRM_2FA_SETUP": "A configuração de um segundo método de autenticação foi concluída com sucesso.",
   "CONFIRM_2FA_DISABLE": "A autenticação de dois fatores foi removida.",
+<<<<<<< HEAD
   "TITLE_MANAGE_PASSKEYS": "Manage Passkeys",
   "MANAGE_PASSKEYS_DESCRIPTION": "Passkeys let you log in without a password, using your device's screen lock or a security key.",
   "MANAGE_PASSKEYS_EMPTY": "You have not registered any passkeys yet.",
@@ -197,6 +201,8 @@
   "PASSKEY_ADDED_ON": "Added {{date}}",
   "CONFIRM_PASSKEY_ADDED": "Your passkey has been added.",
   "CONFIRM_PASSKEY_REMOVED": "Your passkey has been removed.",
+=======
+>>>>>>> main
   "INVALID_TWO_FACTOR_AUTH_TOKEN": "O token inserido parece ser inválido.",
   "UNAUTHORIZED_PAGE_ACCESS_ERROR": "Não estás autorizado a aceder a esta página!",
   "TITLE_PRIVACY_POLICY": "Política de Privacidade",
@@ -403,11 +409,15 @@
   "TAG_EXTERNAL_DEPENDENCY_DESCRIPTION": "Identifica desafios que dependem estritamente de um serviço externo, endpoint local ou chave de uma API para serem resolvidos.",
   "TAG_EXTERNAL_DEPENDENCY_PRESENT": "{{dependency}} estava disponível durante o arranque do servidor. Este desafio deve funcionar como esperado, a menos que {{dependency}} fique indisponível em tempo de execução.",
   "TAG_EXTERNAL_DEPENDENCY_MISSING": "{{dependency}} não estava disponível durante o arranque do servidor. É provável que este desafio não funcione. Clique para ler a documentação sobre a configuração desta dependência.",
+<<<<<<< HEAD
   "TAG_DEPENDENCY": "Dependency",
+=======
+>>>>>>> main
   "TAG_WITH_CODING_CHALLENGE": "Com desafio de programação",
   "TAG_WITH_CODING_CHALLENGE_DESCRIPTION": "Marca um desafio que contém um desafio de programação associado.",
   "TAG_AI/LLM": "IA / LLM",
   "TAG_AI/LLM_DESCRIPTION": "Marca os desafios que requerem o uso de um modelo de IA como resolvidos.",
+<<<<<<< HEAD
   "TAG_PASSKEY/WEBAUTHN": "Passkey / WebAuthn",
   "TAG_PASSKEY/WEBAUTHN_DESCRIPTION": "Marks challenges that revolve around passwordless login with Passkeys (WebAuthn).",
   "TAG_JWT": "JWT",
@@ -428,6 +438,8 @@
   "TAG_GROUP_TECHNIQUE": "Technique",
   "TAG_GROUP_TECHNOLOGY": "Technology",
   "TAG_GROUP_OTHER": "Other",
+=======
+>>>>>>> main
   "CATEGORY_BROKEN_ACCESS_CONTROL": "Controlo de acesso com falhas",
   "CATEGORY_BROKEN_ANTI_AUTOMATION": "Sistema antiautomatização",
   "CATEGORY_BROKEN_AUTHENTICATION": "Autenticação com falhas",

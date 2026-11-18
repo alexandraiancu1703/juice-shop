@@ -45,6 +45,7 @@ Cypress.Commands.add(
     }
     cy.get('#password').type(context.password)
     cy.get('#loginButton').click()
+<<<<<<< HEAD
     if (context.totpSecret) {
       cy.location('hash').should('include', '/2fa/enter')
       cy.task<string>('GenerateAuthenticator', context.totpSecret).then(
@@ -61,6 +62,9 @@ Cypress.Commands.add(
       // eslint-disable-next-line @typescript-eslint/no-unused-expressions
       expect(cookie?.value).to.be.ok
     })
+=======
+    cy.wait(500)
+>>>>>>> main
   }
 )
 

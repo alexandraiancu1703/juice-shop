@@ -37,7 +37,11 @@ p {
 }
 
 .comment {
+<<<<<<< HEAD
   margin-bottom: $space-m;
+=======
+  margin-bottom: $space-xs;
+>>>>>>> main
 }
 
 .review-link {
@@ -73,6 +77,7 @@ p {
   padding-right: $space-m;
 }
 
+<<<<<<< HEAD
 .like-icon {
   display: inline-grid;
   place-items: center;
@@ -80,10 +85,20 @@ p {
 
 .like-icon > * {
   grid-area: 1 / 1;
+=======
+.like-button {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-left: $space-xs;
+  margin-top: -$space-2xs;
+  position: relative;
+>>>>>>> main
 }
 
 .like-counter {
   border-radius: 50%;
+<<<<<<< HEAD
   font-size: 8px;
   line-height: 1;
   padding: $space-3xs $space-2xs;
@@ -111,6 +126,13 @@ p {
   .like-icon-pop {
     animation: none;
   }
+=======
+  bottom: 14px;
+  font-size: 8px;
+  padding: $space-3xs $space-2xs;
+  position: absolute;
+  right: $space-xs;
+>>>>>>> main
 }
 
 h1 {
@@ -152,6 +174,7 @@ div {
 }
 
 
+<<<<<<< HEAD
 .review-header {
   align-items: center;
   display: flex;
@@ -176,6 +199,17 @@ div {
   display: flex;
   flex-shrink: 0;
   gap: $space-3xs;
+=======
+.review-row {
+  align-items: flex-start;
+  display: flex;
+  gap: $space-xs;
+}
+
+.like-container {
+  align-items: center;
+  display: flex;
+>>>>>>> main
 }
 
 .warn-notification {

@@ -1,5 +1,9 @@
 import { readFiles, computeDiffs, writeToFile } from './rsnUtil'
+<<<<<<< HEAD
 import colors from '../lib/colors'
+=======
+import colors from 'colors/safe'
+>>>>>>> main
 
 const keys = readFiles()
 computeDiffs(keys)

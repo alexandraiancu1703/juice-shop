@@ -7,7 +7,11 @@ import { describe, it, before } from 'node:test'
 import assert from 'node:assert/strict'
 import { retrieveChallengesWithCodeSnippet } from '../../routes/vulnCodeSnippet'
 import { readFixes } from '../../routes/vulnCodeFixes'
+<<<<<<< HEAD
 import fs from 'node:fs'
+=======
+import fs from 'graceful-fs'
+>>>>>>> main
 
 void describe('codingChallengeFixes', () => {
   let codingChallenges: string[]

@@ -241,6 +241,7 @@ describe('ContactComponent', () => {
             const submit = compiled.querySelector('button#submitButton') as HTMLButtonElement
             expect(submit.disabled).toBe(true)
         })
+<<<<<<< HEAD
 
         it('should not display error messages or render fields as invalid after submitting feedback', () => {
             component.authorControl.setValue('anonymous')
@@ -260,5 +261,7 @@ describe('ContactComponent', () => {
             const captchaField = compiled.querySelector('input#captchaControl')
             expect(captchaField?.getAttribute('aria-invalid')).not.toBe('true')
         })
+=======
+>>>>>>> main
     })
 })

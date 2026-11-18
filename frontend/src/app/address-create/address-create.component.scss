@@ -5,6 +5,7 @@
 
 @use '../../styles/variables' as *;
 
+<<<<<<< HEAD
 mat-card {
   height: auto;
   min-width: 510px;
@@ -24,6 +25,22 @@ mat-card {
 
 mat-form-field {
   margin-bottom: $space-m;
+=======
+.page-center {
+  display: flex;
+  justify-content: center;
+  padding: $space-l;
+}
+
+mat-card {
+  height: auto;
+  min-width: 320px;
+  width: 30%;
+}
+
+#submitButton {
+  float: right;
+>>>>>>> main
 }
 
 .form-container {
@@ -32,6 +49,7 @@ mat-form-field {
   position: relative;
 }
 
+<<<<<<< HEAD
 .actions {
   display: flex;
   justify-content: space-between;
@@ -46,6 +64,24 @@ mat-form-field {
 
 .hint-spacing {
   margin-left: $space-2xs;
+=======
+.form-container mat-form-field {
+  width: 100%;
+}
+
+.btn-return {
+  float: left;
+}
+
+.actions {
+  margin-top: $space-l;
+}
+
+.actions::after {
+  clear: both;
+  content: '';
+  display: table;
+>>>>>>> main
 }
 
 input::-webkit-outer-spin-button,
@@ -54,3 +90,29 @@ input::-webkit-inner-spin-button {
   -moz-appearance: none;
   margin: 0;
 }
+<<<<<<< HEAD
+=======
+
+.mat-mdc-form-field-hint {
+  align-items: center;
+  color: var(--theme-text-fade-30);
+  display: flex;
+  font-size: 11px;
+  margin-left: -$space-s;
+  margin-right: -$space-s;
+}
+
+.mdc-card {
+  border: 0;
+}
+
+mat-error {
+  font-size: 10.5px;
+  margin-left: -$space-s;
+  margin-top: -$space-3xs;
+}
+
+.hint-spacing {
+  margin-left: $space-2xs;
+}
+>>>>>>> main

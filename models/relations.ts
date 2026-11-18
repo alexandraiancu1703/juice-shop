@@ -1,6 +1,9 @@
 import { type Sequelize } from 'sequelize'
 import { AddressModel } from './address'
+<<<<<<< HEAD
 import { PasskeyModel } from './passkey'
+=======
+>>>>>>> main
 import { BasketModel } from './basket'
 import { BasketItemModel } from './basketitem'
 import { ChallengeModel } from './challenge'
@@ -143,6 +146,7 @@ const relationsInit = (_sequelize: Sequelize) => {
     }
   })
 
+<<<<<<< HEAD
   UserModel.hasMany(PasskeyModel)
   PasskeyModel.belongsTo(UserModel, {
     constraints: true,
@@ -152,6 +156,8 @@ const relationsInit = (_sequelize: Sequelize) => {
     }
   })
 
+=======
+>>>>>>> main
   ChallengeModel.hasMany(ChallengeDependencyModel)
   ChallengeDependencyModel.belongsTo(ChallengeModel)
 

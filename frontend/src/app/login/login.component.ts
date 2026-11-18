@@ -15,14 +15,21 @@ import { faEye, faEyeSlash, faKey } from '@fortawesome/free-solid-svg-icons'
 import { faGoogle } from '@fortawesome/free-brands-svg-icons'
 import { ConfigurationService } from '../Services/configuration.service'
 import { BasketService } from '../Services/basket.service'
+<<<<<<< HEAD
 import { PasskeyService } from '../Services/passkey.service'
+=======
+>>>>>>> main
 import { MatCheckbox } from '@angular/material/checkbox'
 import { MatIconModule } from '@angular/material/icon'
 import { MatTooltip } from '@angular/material/tooltip'
 import { MatIconButton, MatButtonModule } from '@angular/material/button'
 import { MatInputModule } from '@angular/material/input'
+<<<<<<< HEAD
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { HttpErrorResponse } from '@angular/common/http'
+=======
+import { TranslateModule } from '@ngx-translate/core'
+>>>>>>> main
 import { MatFormFieldModule, MatLabel, MatError, MatSuffix } from '@angular/material/form-field'
 import { firstValueFrom, of } from 'rxjs'
 import { catchError } from 'rxjs/operators'
@@ -49,8 +56,11 @@ export class LoginComponent implements OnInit {
   private readonly router = inject(Router)
   private readonly route = inject(ActivatedRoute)
   private readonly basketService = inject(BasketService)
+<<<<<<< HEAD
   private readonly passkeyService = inject(PasskeyService)
   private readonly translate = inject(TranslateService)
+=======
+>>>>>>> main
 
   public readonly loginModel = signal({
     email: '',
@@ -111,7 +121,24 @@ export class LoginComponent implements OnInit {
       try {
         const authentication: any = await firstValueFrom(this.userService.login(user))
         const redirectUrl = this.route.snapshot.queryParamMap.get('redirectUrl') ?? '/search'
+<<<<<<< HEAD
         await this.handleAuthentication(authentication, redirectUrl)
+=======
+        localStorage.setItem('token', authentication.token)
+        const expires = new Date()
+        expires.setHours(expires.getHours() + 8)
+        this.cookieService.put('token', authentication.token, { expires })
+        sessionStorage.setItem('bid', authentication.bid)
+
+        await firstValueFrom(this.basketService.mergeGuestBasketIntoUserBasket(authentication.bid)
+          .pipe(
+            catchError((err) => {
+              console.log(err)
+              return of(void 0)
+            })
+          ))
+        await this.completeLogin(redirectUrl)
+>>>>>>> main
       } catch (err: any) {
         const error = err?.error
         if (error?.status && error?.data && error.status === 'totp_token_required') {
@@ -130,6 +157,7 @@ export class LoginComponent implements OnInit {
     })
   }
 
+<<<<<<< HEAD
   async passkeyLogin () {
     try {
       const { options, authToken } = await firstValueFrom(this.passkeyService.loginOptions(this.loginModel().email || undefined))
@@ -163,6 +191,8 @@ export class LoginComponent implements OnInit {
     await this.completeLogin(redirectUrl)
   }
 
+=======
+>>>>>>> main
   private completeLogin (redirectUrl: string): Promise<boolean> {
     this.basketService.updateNumberOfCartItems()
     this.userService.isLoggedIn.next(true)

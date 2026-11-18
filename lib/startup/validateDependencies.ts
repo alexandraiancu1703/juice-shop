@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
+<<<<<<< HEAD
 import path from 'node:path'
 import { readFile } from 'node:fs/promises'
 import semver from 'semver'
@@ -39,11 +40,32 @@ const validateDependencies = async ({ packageDir = '.' } = {}) => {
   }
 
   if (errors.length === 0) {
+=======
+import colors from 'colors/safe'
+import * as utils from '../utils'
+import logger from '../logger'
+// @ts-expect-error FIXME due to non-existing type definitions for check-dependencies
+import dependencyChecker from 'check-dependencies'
+
+const validateDependencies = async ({ packageDir = '.' } = {}) => {
+  let dependencies: any = {}
+  try {
+    dependencies = await dependencyChecker({ packageDir, scopeList: ['dependencies'] })
+  } catch (err) {
+    logger.warn(`Dependencies in ${colors.bold(packageDir + '/package.json')} could not be checked due to "${utils.getErrorMessage(err)}" error (${colors.red('ERROR')})`)
+  }
+
+  if (dependencies.depsWereOk === true) {
+>>>>>>> main
     logger.info(`All dependencies in ${colors.bold(packageDir + '/package.json')} are satisfied (${colors.green('SUCCESS')})`)
     return true
   } else {
     logger.warn(`Dependencies in ${colors.bold(packageDir + '/package.json')} are not rightly satisfied (${colors.red('ERROR')})`)
+<<<<<<< HEAD
     for (const err of errors) {
+=======
+    for (const err of dependencies.error) {
+>>>>>>> main
       logger.warn(err)
     }
     return false
