@@ -200,7 +200,7 @@ const appendUserId = () => {
             next();
         }
         catch (error) {
-            res.status(401).json({ status: 'error', message: utils.getErrorMessage(error) });
+            res.status(401).json({ status: 'error', message: 'Unauthorized' });
         }
     };
 };
