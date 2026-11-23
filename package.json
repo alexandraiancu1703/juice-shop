@@ -1,5 +1,5 @@
 {
-  "name": "juice-shop1",
+  "name": "juice-shop",
   "version": "20.3.0",
   "private": true,
   "description": "Probably the most modern and sophisticated insecure web application",
@@ -91,7 +91,7 @@
     ]
   },
   "dependencies": {
-    "@ai-sdk/openai-compatible": "^2.0.35",
+    "@ai-sdk/openai-compatible": "^2.1.35",
     "@fontsource/roboto": "^5.2.9",
     "ai": "^6.0.116",
     "beercss": "^4.0.19",
