@@ -53,7 +53,7 @@ const utils = __importStar(require("./utils"));
 const z85 = __importStar(require("z85"));
 exports.publicKey = node_fs_1.default ? node_fs_1.default.readFileSync('encryptionkeys/jwt.pub', 'utf8') : process.env.JWT_PUBLIC_KEY;
 const privateKey = process.env.JWT_PRIVATE_KEY;
-const hash = (data) => node_crypto_1.default.createHash('md5').update(data).digest('hex');
+const hash = (data) => node_crypto_1.default.createHash('sha256').update(data).digest('hex');
 exports.hash = hash;
 const hmac = (data) => node_crypto_1.default.createHmac('sha256', process.env.HMAC_SECRET).update(data).digest('hex');
 exports.hmac = hmac;
